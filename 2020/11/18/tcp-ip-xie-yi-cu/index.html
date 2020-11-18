@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="UTF-8转宽字符, 瓦良格号">
+    <meta name="keywords" content="TCP-IP协议簇, 瓦良格号">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>UTF-8转宽字符 | 瓦良格号</title>
+    <title>TCP-IP协议簇 | 瓦良格号</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">UTF-8转宽字符</h1>
+                    <h1 class="description center-align post-title">TCP-IP协议簇</h1>
                 </div>
             </div>
         </div>
@@ -430,12 +430,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
-                                <span class="chip bg-color">字符编码</span>
+                            <a href="/tags/CCNA/">
+                                <span class="chip bg-color">CCNA</span>
                             </a>
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">网络基础</span>
                             </a>
                         
                     </div>
@@ -446,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C-C/" class="post-category">
-                                C/C++
+                            <a href="/categories/CCNA/" class="post-category">
+                                CCNA
                             </a>
                         
                     </div>
@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-17
+                    2020-11-18
                 </div>
                 
 
@@ -473,14 +473,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    826
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -495,23 +495,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <a id="more"></a>
-
-<p>写这个主要是记录一下两个函数功能、</p>
-<p>事情起源于对某答题系统实现自动获取答案功能、</p>
-<p>该答题系统采用TCP协议进行数据传输，通过wireshark抓包分析得出该答题系统的答案校验功能在客户端运行而非服务器端（也许是出于服务器无法承受多用户同时提交答案校验），服务器向客户端传输的TCP包中同时包含题目和答案，分别在对应的标签中，于是为自动获取答案创造了有利条件、</p>
-<p>数据获取可以通过winpcap开发包简单方便实现，于是利用该库写了一个dll（TCPCapture.dll）实现对指定服务器地址的指定协议数据包进行无间断抓取，提供给程序抓包线程调用。</p>
-<p>组报和报文解析单独开辟线程处理。提取答案时，由于字节流采用UTF-8编码，如何将中文显示到MFC对话框内，花费了一些时间研究。其实如果你是使用Python编程，会简单很多，Python支持指定编码方式解析字节流，提取标签内容可以采用正则表达式或者find函数对关键词搜索即可，但为了追求原汁原味和尽可能减少程序依赖库（其实是因为用惯了C++），我选择了自己编码解析（自己摧残自己）。</p>
-<p><img src="C:\Users\RainyMorning\Desktop\UTF-8转宽字符\程序组成框图.bmp"></p>
-<p>因为之前对字符编码方式不甚了解，所以在答案显示这一步花费了不少时间。BD了一圈，CSDN也晃悠了一圈，试验了好几段代码均以失败告终，最后还是找到了一段代码，避免以后走弯路，所以在这里写下来。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CString <span class="title">XXDlg::UTF8ToUnicode</span><span class="params">(<span class="keyword">char</span>* UTF8)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    DWORD dwUnicodeLen;             <span class="comment">//  转换后Unicode的长度</span></span><br><span class="line">    TCHAR* pwText;                  <span class="comment">//  保存Unicode的指针</span></span><br><span class="line">    CString strUnicode              <span class="comment">//  函数返回值</span></span><br><span class="line">    <span class="comment">//  获取转换后的长度并分配内存</span></span><br><span class="line">    dwUnicodeLen = MultiByteToWideChar(CP_UTF8, <span class="number">0</span>, UTF8, <span class="number">-1</span>, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">    pwText = <span class="keyword">new</span> TCHAR[dwUnicodeLen];</span><br><span class="line">    <span class="keyword">if</span>(!pwText)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> (_T(<span class="string">&quot;失败&quot;</span>)）；</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//  转换为Unicode</span></span><br><span class="line">    MultiByteToWideChar(CP_UTF8, <span class="number">0</span>, UTF8, <span class="number">-1</span>, pwText, dwUnicodeLen);</span><br><span class="line">    <span class="comment">//  转换为CString</span></span><br><span class="line">    strUnicode.Format(_T(<span class="string">&quot;%s&quot;</span>), pwText);</span><br><span class="line">    <span class="comment">//  清除内存</span></span><br><span class="line">    <span class="keyword">delete</span>[] pwText;</span><br><span class="line">    <span class="comment">//  返回值</span></span><br><span class="line">    <span class="keyword">return</span> strUnicode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>回过头来看其实并没有什么技术含量（所以总结下来教训就是：知识和经验不够带来的就是时间代价），主要就是用 MultiByteToWideChar()这个函数按指定编码规则（CP_UTF8说明这里是按UTF-8解码）实现多字节向宽字符转换。</p>
-<p>最后出于功能完整性以及用户体验性考虑（其实是懒）决定将答案自动复制到剪贴板，这样使用过程中就只需要粘贴了，也附上代码。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">XXDlg::CopyToClipBoard</span><span class="params">(CString str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>-&gt;OpenClipboard())</span><br><span class="line">    &#123;</span><br><span class="line">        LPSTR pBuf = <span class="literal">NULL</span>;</span><br><span class="line">        LPCTSTR pSrc = (LPCTSTR) str;</span><br><span class="line">        <span class="keyword">size_t</span> nLen = (_tcslen(pSrc)) + <span class="number">1</span>) * <span class="keyword">sizeof</span>(TCHAR);</span><br><span class="line">        ::EmptyClipboard();</span><br><span class="line">        pBuf = (LPSTR) ::GlobalAlloc(GMEM_DDESHARE, nLen);</span><br><span class="line">        <span class="built_in">memcpy</span>(pBuf, pSrc, nLen);</span><br><span class="line">        ::SetClipboardData(CF_UNICODETEXT, pBuf);</span><br><span class="line">        ::CloseClipboard();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">    	GetDlgItem(IDC_TMDA)-&gt;SetWindowTextW(_T(<span class="string">&quot;复制失败&quot;</span>))；</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最近发现自己以前花时间搜索实现的代码，要么不知道放哪去了，要么不记得怎么使用了，所以决定简单记录一下用过的一些代码片段，方便以后需要的时候不用再花费时间去检索了。</p>
-
+                
             </div>
             <hr/>
 
@@ -536,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://walgh.gitee.io/2020/11/17/utf-8-zhuan-kuan-zi-fu/">https://walgh.gitee.io/2020/11/17/utf-8-zhuan-kuan-zi-fu/</a>
+                    <a href="https://walgh.gitee.io/2020/11/18/tcp-ip-xie-yi-cu/">https://walgh.gitee.io/2020/11/18/tcp-ip-xie-yi-cu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,12 +558,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
-                                    <span class="chip bg-color">字符编码</span>
+                                <a href="/tags/CCNA/">
+                                    <span class="chip bg-color">CCNA</span>
                                 </a>
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">网络基础</span>
                                 </a>
                             
                         </div>
@@ -750,7 +734,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-11-17T11-27-07',
+        id: '2020-11-18T11-27-07',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -774,32 +758,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/11/18/wang-luo-ji-chu/">
+                <a href="/2020/11/18/tcp-ip-xie-yi-cu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="TCP-IP协议簇">
                         
-                        <span class="card-title">网络基础</span>
+                        <span class="card-title">TCP-IP协议簇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-
-这是我第一次尝试写博客
-
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -812,6 +794,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -834,37 +817,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/17/dong-tai-lian-jie-ku/">
+                <a href="/2020/11/18/wang-luo-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="动态链接库">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
                         
-                        <span class="card-title">动态链接库</span>
+                        <span class="card-title">网络基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            动态链接库1. DLL的创建1.1 函数的导出方法1：在导出函数前面添加标识符：
-1_declspec（dllexport）
+                            
 
-方法2：将上述指令进行宏定义
-1#define DLL_API _declspec（dllexport）
+这是我第一次尝试写博客
 
-1.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C-C/" class="post-category">
-                                    C/C+++
+                            <a href="/categories/CCNA/" class="post-category">
+                                    CCNA
                                 </a>
                             
                             
@@ -874,12 +854,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/CCNA/">
+                        <span class="chip bg-color">CCNA</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
-                        <span class="chip bg-color">动态链接库</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">网络基础</span>
                     </a>
                     
                 </div>
