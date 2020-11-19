@@ -453,7 +453,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    283
+                    316
                 </div>
                 
 
@@ -465,23 +465,39 @@
                 
 
                 
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP-IP协议簇"></a>TCP-IP协议簇</h1><h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p>
-<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p>
-<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p>
-<h2 id="端口号类型"><a href="#端口号类型" class="headerlink" title="端口号类型"></a>端口号类型</h2><h2 id="TCP数据段重组"><a href="#TCP数据段重组" class="headerlink" title="TCP数据段重组"></a>TCP数据段重组</h2><p>使用序列号</p>
-<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p>
-<h2 id="常见IP协议"><a href="#常见IP协议" class="headerlink" title="常见IP协议"></a>常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute<br>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p>
+                <h1 id="1-常见协议"><a href="#1-常见协议" class="headerlink" title="1 常见协议"></a>1 常见协议</h1><h2 id="1-1-常见协议"><a href="#1-1-常见协议" class="headerlink" title="1.1 常见协议"></a>1.1 常见协议</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/常见协议.PNG" alt="常见协议" style="zoom:60%;">
 
+<h2 id="1-2-TCP头部"><a href="#1-2-TCP头部" class="headerlink" title="1.2 TCP头部"></a>1.2 TCP头部</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP头部.PNG" alt="TCP头部" style="zoom:60%;">
+
+<h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p>
+<img src="/2020/11/19/tcp-ip-xie-yi-cu/三次握手.PNG" alt="三次握手" style="zoom:60%;">
+
+<h1 id="2-滑动窗口"><a href="#2-滑动窗口" class="headerlink" title="2 滑动窗口"></a>2 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p>
+<img src="/2020/11/19/tcp-ip-xie-yi-cu/滑动窗口.PNG" alt="滑动窗口" style="zoom:60%;">
+
+<h1 id="3-四次挥手"><a href="#3-四次挥手" class="headerlink" title="3 四次挥手"></a>3 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p>
+<img src="/2020/11/19/tcp-ip-xie-yi-cu/四次挥手.PNG" alt="四次挥手" style="zoom:60%;">
+
+<h1 id="4-端口号类型"><a href="#4-端口号类型" class="headerlink" title="4 端口号类型"></a>4 端口号类型</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/端口类型.PNG" alt="端口类型" style="zoom:60%;">
+
+<h1 id="5-TCP数据段重组"><a href="#5-TCP数据段重组" class="headerlink" title="5 TCP数据段重组"></a>5 TCP数据段重组</h1><p>使用序列号</p>
+<img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP数据段重组.PNG" alt="TCP数据段重组" style="zoom:60%;">
+
+<h1 id="6-UDP数据段重组"><a href="#6-UDP数据段重组" class="headerlink" title="6 UDP数据段重组"></a>6 UDP数据段重组</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;">
+
+<h1 id="7-IP"><a href="#7-IP" class="headerlink" title="7 IP"></a>7 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p>
+<img src="/2020/11/19/tcp-ip-xie-yi-cu/IP报头.PNG" alt="IP报头" style="zoom:60%;">
+
+<h2 id="7-1-常见IP协议"><a href="#7-1-常见IP协议" class="headerlink" title="7.1 常见IP协议"></a>7.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p>
+<img src="/2020/11/19/tcp-ip-xie-yi-cu/ICMP.PNG" alt="ICMP" style="zoom:60%;">
+
+<p>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p>
+<h1 id="8-双绞线制作"><a href="#8-双绞线制作" class="headerlink" title="8 双绞线制作"></a>8 双绞线制作</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">
             </div>
             <hr/>
 
@@ -734,7 +750,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            TCP-IP协议簇三次握手第一次：sender-&gt;reciever  发送SYN=1第二次：reciever-&gt;sender  发送SYN=1 ACK=1第三次：sender-&gt;reciever  发送ACK=1ack =
+                            CCNA课程的第二讲，主要涉及TCP协议和IP协议以及双绞线的制作
                         
                     </div>
                     <div class="publish-info">
@@ -788,7 +804,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要对一些网络基础知识进行介绍
+                            本文CCNA课程的第一讲，主要对一些网络基础知识进行介绍
                         
                     </div>
                     <div class="publish-info">
@@ -1016,7 +1032,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.7k</span>&nbsp;字
+                class="white-color">2.8k</span>&nbsp;字
             
             
             

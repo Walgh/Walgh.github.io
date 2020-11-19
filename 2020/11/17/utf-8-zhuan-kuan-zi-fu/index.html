@@ -465,24 +465,19 @@
                 
 
                 
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>写这个主要是记录一下两个函数功能、</p>
-<p>事情起源于对某答题系统实现自动获取答案功能、</p>
-<p>该答题系统采用TCP协议进行数据传输，通过wireshark抓包分析得出该答题系统的答案校验功能在客户端运行而非服务器端（也许是出于服务器无法承受多用户同时提交答案校验），服务器向客户端传输的TCP包中同时包含题目和答案，分别在对应的标签中，于是为自动获取答案创造了有利条件、</p>
-<p>数据获取可以通过winpcap开发包简单方便实现，于是利用该库写了一个dll（TCPCapture.dll）实现对指定服务器地址的指定协议数据包进行无间断抓取，提供给程序抓包线程调用。</p>
-<p>组报和报文解析单独开辟线程处理。提取答案时，由于字节流采用UTF-8编码，如何将中文显示到MFC对话框内，花费了一些时间研究。其实如果你是使用Python编程，会简单很多，Python支持指定编码方式解析字节流，提取标签内容可以采用正则表达式或者find函数对关键词搜索即可，但为了追求原汁原味和尽可能减少程序依赖库（其实是因为用惯了C++），我选择了自己编码解析（自己摧残自己）。</p>
-<img src="/2020/11/17/utf-8-zhuan-kuan-zi-fu/程序组成框图.bmp" alt="程序组成框图" style="zoom:80%;">
+                <p>写这个主要是记录一下两个函数功能</p>
+<p>事情起源于对某答题系统实现自动获取答案功能</p>
+<p>该答题系统采用TCP协议进行数据传输，通过wireshark抓包分析得出该答题系统的答案校验功能在客户端运行而非服务器端（也许是出于服务器无法承受多用户同时提交答案校验），服务器向客户端传输的TCP包中同时包含题目和答案，分别在对应的标签中，于是为自动获取答案创造了有利条件</p>
+<p>数据获取可以通过winpcap开发包简单方便实现，于是利用该库写了一个dll（TCPCapture.dll）实现对指定服务器地址的指定协议数据包进行无间断抓取，提供给程序抓包线程调用</p>
+<p>组报和报文解析单独开辟线程处理。提取答案时，由于字节流采用UTF-8编码，如何将中文显示到MFC对话框内，花费了一些时间研究。其实如果你是使用Python编程，会简单很多，Python支持指定编码方式解析字节流，提取标签内容可以采用正则表达式或者find函数对关键词搜索即可，但为了追求原汁原味和尽可能减少程序依赖库（其实是因为用惯了C++），我选择了自己编码解析（自己摧残自己）</p>
+<img src="/2020/11/17/utf-8-zhuan-kuan-zi-fu/程序组成框图.bmp" alt="程序组成框图" style="zoom:60%;">
 
-<p>因为之前对字符编码方式不甚了解，所以在答案显示这一步花费了不少时间。BD了一圈，CSDN也晃悠了一圈，试验了好几段代码均以失败告终，最后还是找到了一段代码，避免以后走弯路，所以在这里写下来。</p>
+<p>因为之前对字符编码方式不甚了解，所以在答案显示这一步花费了不少时间。BD了一圈，CSDN也晃悠了一圈，试验了好几段代码均以失败告终，最后还是找到了一段代码，避免以后走弯路，所以在这里写下来</p>
 <pre><code>
 CString XXDlg::UTF8ToUnicode(char* UTF8)
 {
@@ -507,8 +502,8 @@ CString XXDlg::UTF8ToUnicode(char* UTF8)
 }
 </code></pre>
 
-<p>回过头来看其实并没有什么技术含量（所以总结下来教训就是：知识和经验不够带来的就是时间代价），主要就是用 MultiByteToWideChar()这个函数按指定编码规则（CP_UTF8说明这里是按UTF-8解码）实现多字节向宽字符转换。</p>
-<p>最后出于功能完整性以及用户体验性考虑（其实是懒）决定将答案自动复制到剪贴板，这样使用过程中就只需要粘贴了，也附上代码。</p>
+<p>回过头来看其实并没有什么技术含量（所以总结下来教训就是：知识和经验不够带来的就是时间代价），主要就是用 MultiByteToWideChar()这个函数按指定编码规则（CP_UTF8说明这里是按UTF-8解码）实现多字节向宽字符转换</p>
+<p>最后出于功能完整性以及用户体验性考虑（其实是懒）决定将答案自动复制到剪贴板，这样使用过程中就只需要粘贴了，也附上代码</p>
 <pre><code>
 void XXDlg::CopyToClipBoard(CString str)
 {
@@ -530,7 +525,7 @@ void XXDlg::CopyToClipBoard(CString str)
 }
 </code></pre>
 
-<p>最近发现自己以前花时间搜索实现的代码，要么不知道放哪去了，要么不记得怎么使用了，所以决定简单记录一下用过的一些代码片段，方便以后需要的时候不用再花费时间去检索了。</p>
+<p>最近发现自己以前花时间搜索实现的代码，要么不知道放哪去了，要么不记得怎么使用了，所以决定简单记录一下用过的一些代码片段，方便以后需要的时候不用再花费时间去检索了</p>
 
             </div>
             <hr/>
@@ -783,7 +778,7 @@ void XXDlg::CopyToClipBoard(CString str)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要介绍C/C++创建和导出动态库的相关知识，涉及函数的导出、类的导出以及使用动态库的方法
+                            主要介绍C/C++创建和导出动态库的相关知识，涉及函数的导出、类的导出以及动态库的使用
                         
                     </div>
                     <div class="publish-info">
@@ -836,7 +831,7 @@ void XXDlg::CopyToClipBoard(CString str)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文主要记录了UTF-8编码字符在MFC程序中如何解码的程序以及将字符串复制到剪贴板的程序。
+                            主要记录了UTF-8编码字符在MFC程序中如何解码的程序以及将字符串复制到剪贴板的程序
                         
                     </div>
                     <div class="publish-info">
@@ -1065,7 +1060,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.7k</span>&nbsp;字
+                class="white-color">2.8k</span>&nbsp;字
             
             
             
