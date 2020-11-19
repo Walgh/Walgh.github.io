@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -100,17 +102,6 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -203,17 +194,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -459,28 +439,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-18
+                    2020-11-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-18
+                    2020-11-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11
+                    610
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -495,9 +475,52 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <a id="more"></a>
-
-<p>这是我第一次尝试写博客</p>
+                <h1 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h1><h2 id="什么是网络"><a href="#什么是网络" class="headerlink" title="什么是网络"></a>什么是网络</h2><h2 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h2><pre><code>1. Hub(集线器)
+优点：便宜
+缺点：共享型，无法满足多人同时访问
+2. 交换机
+优点：可实现多用户同时访问，支持全双工
+缺点：共享型，无法满足多人同时访问
+作用：终端用户设备的接入\基本的安全功能\广播域的隔离（VLAN）
+     所有的接口在同一个广播域
+3. 路由器
+每一个接口是一个独立的广播域
+优点：可搭建大型网络、安全性高
+缺点：接口太少、价格太贵
+作用：路由协议支持\路径选择\数据转发\广域网接入
+4. TIPS
+传输类型：
+单工(始终只能完成一个方向的数据传输)
+半双工(同一时间只能完成一个方向的数据传输)
+全双工(同一时间可以完成两个方向的数据传输)
+数据类型：
+广播报文(单IP到所有IP)
+单播报文(单IP到单IP)
+组播报文(单IP到多IP，类似朋友圈的部分可见）</code></pre>
+<h1 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h1><pre><code>从下至上分别是物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</code></pre>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><pre><code>为应用软件提供接口，使应用程序能够使用网络服务
+http(80)
+https(443)
+dns(53)
+ftp(20/21)
+smtp(25)
+pop3(110)
+telnet(23)
+上述数字代表其端口号</code></pre>
+<h2 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h2><pre><code>数据的解码和编码 加密和解密 压缩和解压缩</code></pre>
+<h2 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h2><pre><code>负责建立、管理和终止表示层实体之间的会话连接</code></pre>
+<h2 id="传输层-主要为TCP-UDP"><a href="#传输层-主要为TCP-UDP" class="headerlink" title="传输层(主要为TCP/UDP)"></a>传输层(主要为TCP/UDP)</h2><pre><code>负责建立端到端的连接，保证报文在端到端之间的传输</code></pre>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><pre><code>为网络设备提供逻辑地址
+进行路由选择、维护路由表
+负责将分组数据从源端传输到目的端
+代表：路由器</code></pre>
+<h2 id="数据链路层-MAC"><a href="#数据链路层-MAC" class="headerlink" title="数据链路层(MAC)"></a>数据链路层(MAC)</h2><pre><code>在不可靠的物理链路上，提供可靠的数据传输服务，把帧从一跳(结点)移动到另一帧（结点）
+组帧、物理编址、流量控制、差错控制、接入控制
+代表：交换机</code></pre>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><pre><code>负责把逐个的比特从一跳(结点)移动到另一跳(结点)
+代表：集线器</code></pre>
+<h1 id="DoD-TCP-IP-模型"><a href="#DoD-TCP-IP-模型" class="headerlink" title="DoD(TCP/IP)模型"></a>DoD(TCP/IP)模型</h1><pre><code>从下至上分别是网络访问层、Internet层、传输层、应用层</code></pre>
+<h1 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h1><pre><code>广播域的进出口</code></pre>
 
             </div>
             <hr/>
@@ -523,7 +546,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://walgh.gitee.io/2020/11/18/wang-luo-ji-chu/">https://walgh.gitee.io/2020/11/18/wang-luo-ji-chu/</a>
+                    <a href="https://walgh.gitee.io/2020/11/19/wang-luo-ji-chu/">https://walgh.gitee.io/2020/11/19/wang-luo-ji-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -718,33 +741,6 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: '',
-        owner: '',
-        admin: null,
-        id: '2020-11-18T11-10-01',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-
-    
 
     
 
@@ -765,7 +761,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/18/tcp-ip-xie-yi-cu/">
+                <a href="/2020/11/19/tcp-ip-xie-yi-cu/">
                     <div class="card-image">
                         
                         
@@ -777,12 +773,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            TCP-IP协议簇三次握手第一次：sender-&gt;reciever  发送SYN=1第二次：reciever-&gt;sender  发送SYN=1 ACK=1第三次：sender-&gt;reciever  发送ACK=1ack =
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
                         </span>
                         <span class="publish-author">
                             
@@ -818,35 +814,35 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/17/utf-8-zhuan-kuan-zi-fu/">
+                <a href="/2020/11/19/ip-zi-wang-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="UTF-8转宽字符">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IP子网规划">
                         
-                        <span class="card-title">UTF-8转宽字符</span>
+                        <span class="card-title">IP子网规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            IP子网规划IP地址网络层概念主机唯一的标志，保证主机间正常通信IPv4地址由32bit组成
+IP地址分类IP地址共分A|B|C|D|E5个类别
 
-写这个主要是记录一下两个函数功能、
-事情起源于对某答题系统实现自动获取答案功能、
-该答题系统采用TCP协议进行数据传输，通过wireshark抓包分析得出该答题系统的答案校验功能在客户端运行而非服务器端（也许是出于服务器无法承受多用户同
+
+特殊IPv4地址网络地址和广播地址默认路由：0.0.0.0环回地址：127.0.0.0/8
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C-C/" class="post-category">
-                                    C/C++
+                            <a href="/categories/CCNA/" class="post-category">
+                                    CCNA
                                 </a>
                             
                             
@@ -856,12 +852,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">字符编码</span>
+                    <a href="/tags/CCNA/">
+                        <span class="chip bg-color">CCNA</span>
                     </a>
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">IP子网规划</span>
                     </a>
                     
                 </div>
@@ -881,17 +877,11 @@
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
 
 <!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1068,7 +1058,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.4k</span>&nbsp;字
+                class="white-color">2.7k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="TCP-IP协议簇, 瓦良格号">
+    <meta name="keywords" content="IP子网规划, 瓦良格号">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>TCP-IP协议簇 | 瓦良格号</title>
+    <title>IP子网规划 | 瓦良格号</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -100,17 +102,6 @@
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -209,17 +200,6 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
@@ -308,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">TCP-IP协议簇</h1>
+                    <h1 class="description center-align post-title">IP子网规划</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +414,8 @@
                                 <span class="chip bg-color">CCNA</span>
                             </a>
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">网络基础</span>
+                            <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">IP子网规划</span>
                             </a>
                         
                     </div>
@@ -459,21 +439,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-18
+                    2020-11-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-18
+                    2020-11-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    456
                 </div>
                 
 
@@ -495,7 +475,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="IP子网规划"><a href="#IP子网规划" class="headerlink" title="IP子网规划"></a>IP子网规划</h1><h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>网络层概念<br>主机唯一的标志，保证主机间正常通信<br>IPv4地址由32bit组成</p>
+<h2 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h2><p>IP地址共分A|B|C|D|E5个类别</p>
+<img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址分类.PNG" alt="IP地址分类" style="zoom:80%;">
+
+<h3 id="特殊IPv4地址"><a href="#特殊IPv4地址" class="headerlink" title="特殊IPv4地址"></a>特殊IPv4地址</h3><p>网络地址和广播地址<br>默认路由：0.0.0.0<br>环回地址：127.0.0.0/8 用于测试<br>链路本地地址：169.254.0.0/16 Windows<br>TEST-NET地址：192.0.2.0/24 保留地址</p>
+<h2 id="IP地址的组成"><a href="#IP地址的组成" class="headerlink" title="IP地址的组成"></a>IP地址的组成</h2><p>IP地址由两部分组成<br> 网络部分（NETWORK）<br> 主机部分（HOST）</p>
+<img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址组成.PNG" alt="IP地址组成" style="zoom:80%;">
+
+<img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址分类2.PNG" alt="IP地址第二分类" style="zoom:80%;">
+
+<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>用来确定IP的网络地址<br>32个二进制位<br>IP地址中的网络部分用1表示，主机部分用0表示<br>IP地址和子网掩码作逻辑“与”运算得到网络地址</p>
+<h2 id="IPv4网络中的地址类型"><a href="#IPv4网络中的地址类型" class="headerlink" title="IPv4网络中的地址类型"></a>IPv4网络中的地址类型</h2><h3 id="网络地址"><a href="#网络地址" class="headerlink" title="网络地址"></a>网络地址</h3><p>指代网络的地址，在网络的IPv4地址范围内，最小地址保留为网络地址。此地址的主机部分的每一个主机位为0</p>
+<h3 id="广播地址"><a href="#广播地址" class="headerlink" title="广播地址"></a>广播地址</h3><p>用于向网络中的所有主机发送数据的特殊地址。广播地址使用该网络范围内的最大地址。即主机部分的各比特位全部为1的地址。</p>
+<h3 id="主机地址"><a href="#主机地址" class="headerlink" title="主机地址"></a>主机地址</h3><p>分配给网络中终端设备的地址</p>
+<h2 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h2><p>子网划分：将网络划分为适当大小的多个子网</p>
+<h3 id="为什么要划分子网？"><a href="#为什么要划分子网？" class="headerlink" title="为什么要划分子网？"></a>为什么要划分子网？</h3><ol>
+<li>提供灵活的编制</li>
+<li>便于管理</li>
+<li>广播抑制<br>“借用”主机位来“制造”新的“网络”（网络位向主机位借位）</li>
+</ol>
+<h3 id="子网划分原理"><a href="#子网划分原理" class="headerlink" title="子网划分原理"></a>子网划分原理</h3><p>IP地址经过一次子网划分后，被分成3个部分——网络位、子网位和主机位<br>子网数=2^n，其中n为子网部分位数<br>主机数=2^N-2，其中N为主机部分位数</p>
+
             </div>
             <hr/>
 
@@ -520,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://walgh.gitee.io/2020/11/18/tcp-ip-xie-yi-cu/">https://walgh.gitee.io/2020/11/18/tcp-ip-xie-yi-cu/</a>
+                    <a href="https://walgh.gitee.io/2020/11/19/ip-zi-wang-gui-hua/">https://walgh.gitee.io/2020/11/19/ip-zi-wang-gui-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,8 +563,8 @@
                                     <span class="chip bg-color">CCNA</span>
                                 </a>
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">网络基础</span>
+                                <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">IP子网规划</span>
                                 </a>
                             
                         </div>
@@ -715,33 +716,6 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: '',
-        owner: '',
-        admin: null,
-        id: '2020-11-18T11-27-07',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-
-    
 
     
 
@@ -758,30 +732,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/18/tcp-ip-xie-yi-cu/">
+                <a href="/2020/11/19/wang-luo-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="TCP-IP协议簇">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
                         
-                        <span class="card-title">TCP-IP协议簇</span>
+                        <span class="card-title">网络基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            主要对一些网络基础知识进行介绍
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -794,7 +767,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -817,34 +789,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/18/wang-luo-ji-chu/">
+                <a href="/2020/11/17/dong-tai-lian-jie-ku/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="动态链接库">
                         
-                        <span class="card-title">网络基础</span>
+                        <span class="card-title">动态链接库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-这是我第一次尝试写博客
-
+                            主要介绍C/C++创建和导出动态库的相关知识，涉及函数的导出、类的导出以及使用动态库的方法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CCNA/" class="post-category">
-                                    CCNA
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
                                 </a>
                             
                             
@@ -854,12 +823,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CCNA/">
-                        <span class="chip bg-color">CCNA</span>
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
                     </a>
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
+                        <span class="chip bg-color">动态链接库</span>
                     </a>
                     
                 </div>
@@ -879,17 +848,11 @@
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
 
 <!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1066,7 +1029,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.4k</span>&nbsp;字
+                class="white-color">2.7k</span>&nbsp;字
             
             
             
