@@ -477,27 +477,27 @@
 <h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p>
 <img src="/2020/11/19/tcp-ip-xie-yi-cu/三次握手.PNG" alt="三次握手" style="zoom:60%;">
 
-<h1 id="2-滑动窗口"><a href="#2-滑动窗口" class="headerlink" title="2 滑动窗口"></a>2 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p>
+<h1 id="3-滑动窗口"><a href="#3-滑动窗口" class="headerlink" title="3 滑动窗口"></a>3 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p>
 <img src="/2020/11/19/tcp-ip-xie-yi-cu/滑动窗口.PNG" alt="滑动窗口" style="zoom:60%;">
 
-<h1 id="3-四次挥手"><a href="#3-四次挥手" class="headerlink" title="3 四次挥手"></a>3 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p>
+<h1 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p>
 <img src="/2020/11/19/tcp-ip-xie-yi-cu/四次挥手.PNG" alt="四次挥手" style="zoom:60%;">
 
-<h1 id="4-端口号类型"><a href="#4-端口号类型" class="headerlink" title="4 端口号类型"></a>4 端口号类型</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/端口类型.PNG" alt="端口类型" style="zoom:60%;">
+<h1 id="5-端口号类型"><a href="#5-端口号类型" class="headerlink" title="5 端口号类型"></a>5 端口号类型</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/端口类型.PNG" alt="端口类型" style="zoom:60%;">
 
-<h1 id="5-TCP数据段重组"><a href="#5-TCP数据段重组" class="headerlink" title="5 TCP数据段重组"></a>5 TCP数据段重组</h1><p>使用序列号</p>
+<h1 id="6-TCP数据段重组"><a href="#6-TCP数据段重组" class="headerlink" title="6 TCP数据段重组"></a>6 TCP数据段重组</h1><p>使用序列号</p>
 <img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP数据段重组.PNG" alt="TCP数据段重组" style="zoom:60%;">
 
-<h1 id="6-UDP数据段重组"><a href="#6-UDP数据段重组" class="headerlink" title="6 UDP数据段重组"></a>6 UDP数据段重组</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;">
+<h1 id="7-UDP数据段重组"><a href="#7-UDP数据段重组" class="headerlink" title="7 UDP数据段重组"></a>7 UDP数据段重组</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;">
 
-<h1 id="7-IP"><a href="#7-IP" class="headerlink" title="7 IP"></a>7 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p>
+<h1 id="8-IP"><a href="#8-IP" class="headerlink" title="8 IP"></a>8 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p>
 <img src="/2020/11/19/tcp-ip-xie-yi-cu/IP报头.PNG" alt="IP报头" style="zoom:60%;">
 
-<h2 id="7-1-常见IP协议"><a href="#7-1-常见IP协议" class="headerlink" title="7.1 常见IP协议"></a>7.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p>
+<h2 id="8-1-常见IP协议"><a href="#8-1-常见IP协议" class="headerlink" title="8.1 常见IP协议"></a>8.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p>
 <img src="/2020/11/19/tcp-ip-xie-yi-cu/ICMP.PNG" alt="ICMP" style="zoom:60%;">
 
 <p>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p>
-<h1 id="8-双绞线制作"><a href="#8-双绞线制作" class="headerlink" title="8 双绞线制作"></a>8 双绞线制作</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">
+<h1 id="9-双绞线制作"><a href="#9-双绞线制作" class="headerlink" title="9 双绞线制作"></a>9 双绞线制作</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">
             </div>
             <hr/>
 
@@ -733,30 +733,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/19/tcp-ip-xie-yi-cu/">
+                <a href="/2020/11/19/ip-zi-wang-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="TCP-IP协议簇">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IP子网规划">
                         
-                        <span class="card-title">TCP-IP协议簇</span>
+                        <span class="card-title">IP子网规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CCNA课程的第二讲，主要涉及TCP协议和IP协议以及双绞线的制作
+                            CCNA课程的第三讲，主要涉及IP子网概念相关知识
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -769,16 +768,15 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CCNA/">
-                        <span class="chip bg-color">CCNA</span>
+                    <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">IP子网规划</span>
                     </a>
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/CCNA/">
+                        <span class="chip bg-color">CCNA</span>
                     </a>
                     
                 </div>
@@ -890,8 +888,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('2'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -903,7 +901,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

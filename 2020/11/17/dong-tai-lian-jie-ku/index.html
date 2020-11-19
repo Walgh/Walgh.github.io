@@ -753,19 +753,19 @@ funName2
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/19/ip-zi-wang-gui-hua/">
+                <a href="/2020/11/19/wang-luo-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IP子网规划">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
                         
-                        <span class="card-title">IP子网规划</span>
+                        <span class="card-title">网络基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CCNA课程的第三讲，主要涉及IP子网概念相关知识
+                            本文CCNA课程的第一讲，主要对一些网络基础知识进行介绍
                         
                     </div>
                     <div class="publish-info">
@@ -787,12 +787,12 @@ funName2
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">IP子网规划</span>
-                    </a>
-                    
                     <a href="/tags/CCNA/">
                         <span class="chip bg-color">CCNA</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">网络基础</span>
                     </a>
                     
                 </div>
@@ -904,8 +904,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('2'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -917,7 +917,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

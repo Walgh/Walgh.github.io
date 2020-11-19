@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>IP子网规划</title>
+      <link href="2020/11/19/ip-zi-wang-gui-hua/"/>
+      <url>2020/11/19/ip-zi-wang-gui-hua/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1 IP地址"></a>1 IP地址</h1><p>网络层概念<br>主机唯一的标志，保证主机间正常通信<br>IPv4地址由32bit组成</p><h1 id="2-IP地址分类"><a href="#2-IP地址分类" class="headerlink" title="2 IP地址分类"></a>2 IP地址分类</h1><p>IP地址共分A|B|C|D|E5个类别</p><img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址分类.PNG" alt="IP地址分类" style="zoom:60%;"><h2 id="2-1-特殊IPv4地址"><a href="#2-1-特殊IPv4地址" class="headerlink" title="2.1 特殊IPv4地址"></a>2.1 特殊IPv4地址</h2><p>网络地址和广播地址<br>默认路由：0.0.0.0<br>环回地址：127.0.0.0/8 用于测试<br>链路本地地址：169.254.0.0/16 Windows<br>TEST-NET地址：192.0.2.0/24 保留地址</p><h1 id="3-IP地址的组成"><a href="#3-IP地址的组成" class="headerlink" title="3 IP地址的组成"></a>3 IP地址的组成</h1><p>IP地址由两部分组成<br> 网络部分（NETWORK）<br> 主机部分（HOST）</p><img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址组成.PNG" alt="IP地址组成" style="zoom:60%;"><img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址分类2.PNG" alt="IP地址第二分类" style="zoom:60%;"><h1 id="4-子网掩码"><a href="#4-子网掩码" class="headerlink" title="4 子网掩码"></a>4 子网掩码</h1><p>用来确定IP的网络地址<br>32个二进制位<br>IP地址中的网络部分用1表示，主机部分用0表示<br>IP地址和子网掩码作逻辑“与”运算得到网络地址</p><h1 id="5-IPv4网络中的地址类型"><a href="#5-IPv4网络中的地址类型" class="headerlink" title="5 IPv4网络中的地址类型"></a>5 IPv4网络中的地址类型</h1><h2 id="5-1-网络地址"><a href="#5-1-网络地址" class="headerlink" title="5.1 网络地址"></a>5.1 网络地址</h2><p>指代网络的地址，在网络的IPv4地址范围内，最小地址保留为网络地址。此地址的主机部分的每一个主机位为0</p><h2 id="5-2-广播地址"><a href="#5-2-广播地址" class="headerlink" title="5.2 广播地址"></a>5.2 广播地址</h2><p>用于向网络中的所有主机发送数据的特殊地址。广播地址使用该网络范围内的最大地址。即主机部分的各比特位全部为1的地址。</p><h2 id="5-3-主机地址"><a href="#5-3-主机地址" class="headerlink" title="5.3 主机地址"></a>5.3 主机地址</h2><p>分配给网络中终端设备的地址</p><h1 id="6-划分子网"><a href="#6-划分子网" class="headerlink" title="6 划分子网"></a>6 划分子网</h1><p>子网划分：将网络划分为适当大小的多个子网</p><h2 id="6-1-为什么要划分子网？"><a href="#6-1-为什么要划分子网？" class="headerlink" title="6.1 为什么要划分子网？"></a>6.1 为什么要划分子网？</h2><ol><li>提供灵活的编制</li><li>便于管理</li><li>广播抑制<br>“借用”主机位来“制造”新的“网络”（网络位向主机位借位）</li></ol><h2 id="6-2-子网划分原理"><a href="#6-2-子网划分原理" class="headerlink" title="6.2 子网划分原理"></a>6.2 子网划分原理</h2><p>IP地址经过一次子网划分后，被分成3个部分——网络位、子网位和主机位<br>子网数=2^n，其中n为子网部分位数<br>主机数=2^N-2，其中N为主机部分位数</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CCNA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IP子网规划 </tag>
+            
+            <tag> CCNA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TCP-IP协议簇</title>
       <link href="2020/11/19/tcp-ip-xie-yi-cu/"/>
       <url>2020/11/19/tcp-ip-xie-yi-cu/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-常见协议"><a href="#1-常见协议" class="headerlink" title="1 常见协议"></a>1 常见协议</h1><h2 id="1-1-常见协议"><a href="#1-1-常见协议" class="headerlink" title="1.1 常见协议"></a>1.1 常见协议</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/常见协议.PNG" alt="常见协议" style="zoom:60%;"><h2 id="1-2-TCP头部"><a href="#1-2-TCP头部" class="headerlink" title="1.2 TCP头部"></a>1.2 TCP头部</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP头部.PNG" alt="TCP头部" style="zoom:60%;"><h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/三次握手.PNG" alt="三次握手" style="zoom:60%;"><h1 id="2-滑动窗口"><a href="#2-滑动窗口" class="headerlink" title="2 滑动窗口"></a>2 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/滑动窗口.PNG" alt="滑动窗口" style="zoom:60%;"><h1 id="3-四次挥手"><a href="#3-四次挥手" class="headerlink" title="3 四次挥手"></a>3 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/四次挥手.PNG" alt="四次挥手" style="zoom:60%;"><h1 id="4-端口号类型"><a href="#4-端口号类型" class="headerlink" title="4 端口号类型"></a>4 端口号类型</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/端口类型.PNG" alt="端口类型" style="zoom:60%;"><h1 id="5-TCP数据段重组"><a href="#5-TCP数据段重组" class="headerlink" title="5 TCP数据段重组"></a>5 TCP数据段重组</h1><p>使用序列号</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP数据段重组.PNG" alt="TCP数据段重组" style="zoom:60%;"><h1 id="6-UDP数据段重组"><a href="#6-UDP数据段重组" class="headerlink" title="6 UDP数据段重组"></a>6 UDP数据段重组</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;"><h1 id="7-IP"><a href="#7-IP" class="headerlink" title="7 IP"></a>7 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/IP报头.PNG" alt="IP报头" style="zoom:60%;"><h2 id="7-1-常见IP协议"><a href="#7-1-常见IP协议" class="headerlink" title="7.1 常见IP协议"></a>7.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/ICMP.PNG" alt="ICMP" style="zoom:60%;"><p>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p><h1 id="8-双绞线制作"><a href="#8-双绞线制作" class="headerlink" title="8 双绞线制作"></a>8 双绞线制作</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">]]></content>
+        <content type="html"><![CDATA[<h1 id="1-常见协议"><a href="#1-常见协议" class="headerlink" title="1 常见协议"></a>1 常见协议</h1><h2 id="1-1-常见协议"><a href="#1-1-常见协议" class="headerlink" title="1.1 常见协议"></a>1.1 常见协议</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/常见协议.PNG" alt="常见协议" style="zoom:60%;"><h2 id="1-2-TCP头部"><a href="#1-2-TCP头部" class="headerlink" title="1.2 TCP头部"></a>1.2 TCP头部</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP头部.PNG" alt="TCP头部" style="zoom:60%;"><h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/三次握手.PNG" alt="三次握手" style="zoom:60%;"><h1 id="3-滑动窗口"><a href="#3-滑动窗口" class="headerlink" title="3 滑动窗口"></a>3 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/滑动窗口.PNG" alt="滑动窗口" style="zoom:60%;"><h1 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/四次挥手.PNG" alt="四次挥手" style="zoom:60%;"><h1 id="5-端口号类型"><a href="#5-端口号类型" class="headerlink" title="5 端口号类型"></a>5 端口号类型</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/端口类型.PNG" alt="端口类型" style="zoom:60%;"><h1 id="6-TCP数据段重组"><a href="#6-TCP数据段重组" class="headerlink" title="6 TCP数据段重组"></a>6 TCP数据段重组</h1><p>使用序列号</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP数据段重组.PNG" alt="TCP数据段重组" style="zoom:60%;"><h1 id="7-UDP数据段重组"><a href="#7-UDP数据段重组" class="headerlink" title="7 UDP数据段重组"></a>7 UDP数据段重组</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;"><h1 id="8-IP"><a href="#8-IP" class="headerlink" title="8 IP"></a>8 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/IP报头.PNG" alt="IP报头" style="zoom:60%;"><h2 id="8-1-常见IP协议"><a href="#8-1-常见IP协议" class="headerlink" title="8.1 常见IP协议"></a>8.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p><img src="/2020/11/19/tcp-ip-xie-yi-cu/ICMP.PNG" alt="ICMP" style="zoom:60%;"><p>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p><h1 id="9-双绞线制作"><a href="#9-双绞线制作" class="headerlink" title="9 双绞线制作"></a>9 双绞线制作</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">]]></content>
       
       
       <categories>
@@ -50,33 +77,6 @@
             <tag> CCNA </tag>
             
             <tag> 网络基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>IP子网规划</title>
-      <link href="2020/11/19/ip-zi-wang-gui-hua/"/>
-      <url>2020/11/19/ip-zi-wang-gui-hua/</url>
-      
-        <content type="html"><![CDATA[<h1 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1 IP地址"></a>1 IP地址</h1><p>网络层概念<br>主机唯一的标志，保证主机间正常通信<br>IPv4地址由32bit组成</p><h1 id="2-IP地址分类"><a href="#2-IP地址分类" class="headerlink" title="2 IP地址分类"></a>2 IP地址分类</h1><p>IP地址共分A|B|C|D|E5个类别</p><img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址分类.PNG" alt="IP地址分类" style="zoom:60%;"><h2 id="2-1-特殊IPv4地址"><a href="#2-1-特殊IPv4地址" class="headerlink" title="2.1 特殊IPv4地址"></a>2.1 特殊IPv4地址</h2><p>网络地址和广播地址<br>默认路由：0.0.0.0<br>环回地址：127.0.0.0/8 用于测试<br>链路本地地址：169.254.0.0/16 Windows<br>TEST-NET地址：192.0.2.0/24 保留地址</p><h1 id="3-IP地址的组成"><a href="#3-IP地址的组成" class="headerlink" title="3 IP地址的组成"></a>3 IP地址的组成</h1><p>IP地址由两部分组成<br> 网络部分（NETWORK）<br> 主机部分（HOST）</p><img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址组成.PNG" alt="IP地址组成" style="zoom:60%;"><img src="/2020/11/19/ip-zi-wang-gui-hua/IP地址分类2.PNG" alt="IP地址第二分类" style="zoom:60%;"><h1 id="4-子网掩码"><a href="#4-子网掩码" class="headerlink" title="4 子网掩码"></a>4 子网掩码</h1><p>用来确定IP的网络地址<br>32个二进制位<br>IP地址中的网络部分用1表示，主机部分用0表示<br>IP地址和子网掩码作逻辑“与”运算得到网络地址</p><h1 id="5-IPv4网络中的地址类型"><a href="#5-IPv4网络中的地址类型" class="headerlink" title="5 IPv4网络中的地址类型"></a>5 IPv4网络中的地址类型</h1><h2 id="5-1-网络地址"><a href="#5-1-网络地址" class="headerlink" title="5.1 网络地址"></a>5.1 网络地址</h2><p>指代网络的地址，在网络的IPv4地址范围内，最小地址保留为网络地址。此地址的主机部分的每一个主机位为0</p><h2 id="5-2-广播地址"><a href="#5-2-广播地址" class="headerlink" title="5.2 广播地址"></a>5.2 广播地址</h2><p>用于向网络中的所有主机发送数据的特殊地址。广播地址使用该网络范围内的最大地址。即主机部分的各比特位全部为1的地址。</p><h2 id="5-3-主机地址"><a href="#5-3-主机地址" class="headerlink" title="5.3 主机地址"></a>5.3 主机地址</h2><p>分配给网络中终端设备的地址</p><h1 id="6-划分子网"><a href="#6-划分子网" class="headerlink" title="6 划分子网"></a>6 划分子网</h1><p>子网划分：将网络划分为适当大小的多个子网</p><h2 id="6-1-为什么要划分子网？"><a href="#6-1-为什么要划分子网？" class="headerlink" title="6.1 为什么要划分子网？"></a>6.1 为什么要划分子网？</h2><ol><li>提供灵活的编制</li><li>便于管理</li><li>广播抑制<br>“借用”主机位来“制造”新的“网络”（网络位向主机位借位）</li></ol><h2 id="6-2-子网划分原理"><a href="#6-2-子网划分原理" class="headerlink" title="6.2 子网划分原理"></a>6.2 子网划分原理</h2><p>IP地址经过一次子网划分后，被分成3个部分——网络位、子网位和主机位<br>子网数=2^n，其中n为子网部分位数<br>主机数=2^N-2，其中N为主机部分位数</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> CCNA </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> IP子网规划 </tag>
-            
-            <tag> CCNA </tag>
             
         </tags>
       
