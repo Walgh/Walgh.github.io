@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="动态链接库, 瓦良格号">
+    <meta name="keywords" content="UTF-8转宽字符, 瓦良格号">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>动态链接库 | 瓦良格号</title>
+    <title>UTF-8转宽字符 | 瓦良格号</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -212,7 +212,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/walgh" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -269,7 +269,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/walgh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">动态链接库</h1>
+                    <h1 class="description center-align post-title">UTF-8转宽字符</h1>
                 </div>
             </div>
         </div>
@@ -410,12 +410,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
+                                <span class="chip bg-color">字符编码</span>
                             </a>
                         
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
-                                <span class="chip bg-color">动态链接库</span>
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
                             </a>
                         
                     </div>
@@ -453,14 +453,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    567
+                    810
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -470,49 +470,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-DLL的创建"><a href="#1-DLL的创建" class="headerlink" title="1 DLL的创建"></a>1 DLL的创建</h1><h2 id="1-1-函数的导出"><a href="#1-1-函数的导出" class="headerlink" title="1.1 函数的导出"></a>1.1 函数的导出</h2><p>方法1：在导出函数前面添加<strong>标识符</strong>：</p>
-<pre class=" language-c++"><code class="language-c++">_declspec（dllexport）</code></pre>
-<p>方法2：将上述指令进行<strong>宏定义</strong></p>
-<pre class=" language-c++"><code class="language-c++">#define DLL_API _declspec（dllexport）</code></pre>
-<h2 id="1-2-类的导出"><a href="#1-2-类的导出" class="headerlink" title="1.2 类的导出"></a>1.2 类的导出</h2><p>在类名前加入宏定义 DLL_API</p>
-<pre class=" language-c++"><code class="language-c++">ex:class DLL_API XXCLASS{}</code></pre>
-<p>若只需导出类中的某个函数，则可只在对应函数前加入修饰符、</p>
-<p>调用方法均需要先对类进行实例化，且<strong>导出函数必须是public属性</strong></p>
-<h2 id="1-3-支持MFC的DLL"><a href="#1-3-支持MFC的DLL" class="headerlink" title="1.3 支持MFC的DLL"></a>1.3 支持MFC的DLL</h2><h3 id="1-3-1-动态链接MFC"><a href="#1-3-1-动态链接MFC" class="headerlink" title="1.3.1 动态链接MFC"></a>1.3.1 动态链接MFC</h3><p>发布DLL时需提供MFC动态链接库</p>
-<h3 id="1-3-2-静态链接MFC"><a href="#1-3-2-静态链接MFC" class="headerlink" title="1.3.2 静态链接MFC"></a>1.3.2 静态链接MFC</h3><p>发布时无需提供MFC动态链接库</p>
-<h3 id="1-3-3-MFC扩展DLL"><a href="#1-3-3-MFC扩展DLL" class="headerlink" title="1.3.3 MFC扩展DLL"></a>1.3.3 MFC扩展DLL</h3><p>使用共享的MFC DLL，支持导出MFC类，而两种方式只支持导出自己编写的C++类</p>
-<h1 id="2-DLL的调用"><a href="#2-DLL的调用" class="headerlink" title="2 DLL的调用"></a>2 DLL的调用</h1><h2 id="2-1-隐式加载"><a href="#2-1-隐式加载" class="headerlink" title="2.1 隐式加载"></a>2.1 隐式加载</h2><p><strong>方法1：</strong>使用<strong>extern关键字</strong>对引用函数进行外部声明 </p>
-<p><strong>方法2：</strong>使用标识符——<strong>declspec（dllimport）</strong>对引用函数进行声明</p>
-<p><strong>方法3：</strong>在发布DLL时提供头文件，头文件内包含导出函数、类（<strong>实际应用均应该这样</strong>）</p>
-<pre class=" language-c++"><code class="language-c++">ex:
-#ifdef DLL_API
-#else
-#define DLL_API _declspec(dllimport)
-#endif
+                <p>写这个主要是记录一下两个函数功能</p>
+<p>事情起源于对某答题系统实现自动获取答案功能</p>
+<p>该答题系统采用TCP协议进行数据传输，通过wireshark抓包分析得出该答题系统的答案校验功能在客户端运行而非服务器端（也许是出于服务器无法承受多用户同时提交答案校验），服务器向客户端传输的TCP包中同时包含题目和答案，分别在对应的标签中，于是为自动获取答案创造了有利条件</p>
+<p>数据获取可以通过winpcap开发包简单方便实现，于是利用该库写了一个dll（TCPCapture.dll）实现对指定服务器地址的指定协议数据包进行无间断抓取，提供给程序抓包线程调用</p>
+<p>组报和报文解析单独开辟线程处理。提取答案时，由于字节流采用UTF-8编码，如何将中文显示到MFC对话框内，花费了一些时间研究。其实如果你是使用Python编程，会简单很多，Python支持指定编码方式解析字节流，提取标签内容可以采用正则表达式或者find函数对关键词搜索即可，但为了追求原汁原味和尽可能减少程序依赖库（其实是因为用惯了C++），我选择了自己编码解析（自己摧残自己）</p>
+<img src="/posts/3cfe74b4/程序组成框图.bmp" alt="程序组成框图" style="zoom:60%;">
 
-DLL_API fun1();
-DLL_API fun2();
-...</code></pre>
-<h2 id="2-2-显示加载"><a href="#2-2-显示加载" class="headerlink" title="2.2 显示加载"></a>2.2 显示加载</h2><p>LoadLibary函数</p>
-<p>FreeLibrary函数：释放该DLL</p>
-<h2 id="2-3-隐式和显示的区别"><a href="#2-3-隐式和显示的区别" class="headerlink" title="2.3 隐式和显示的区别"></a>2.3 隐式和显示的区别</h2><p>显示加载时在程序调用时才进行资源加载，而隐式加载则是在程序启动时就加载，当调用DLL过多时可能出现启动时间长，由于全程加载DLL，也会出现资源占用的情况，而且其实隐式加载也是采用LoadLibary函数这套机制。</p>
-<h1 id="3-解决名字改编问题"><a href="#3-解决名字改编问题" class="headerlink" title="3 解决名字改编问题"></a>3 解决名字改编问题</h1><p>C++编译器在生成DLL时会对导出进行名字改编，且不同的编译器改编规则不同，因此需要加入限定符<strong>extern “C”</strong>，保证导出函数名称不发生变化</p>
-<pre class=" language-c++"><code class="language-c++">ex:
-#ifdef DLL_API
-#else
-#define DLL_API extern “C” _declspec(dllimport)
-#endif
+<p>因为之前对字符编码方式不甚了解，所以在答案显示这一步花费了不少时间。BD了一圈，CSDN也晃悠了一圈，试验了好几段代码均以失败告终，最后还是找到了一段代码，避免以后走弯路，所以在这里写下来</p>
+<pre><code>
+CString XXDlg::UTF8ToUnicode(char* UTF8)
+{
+    DWORD dwUnicodeLen;             //  转换后Unicode的长度
+    TCHAR* pwText;                  //  保存Unicode的指针
+    CString strUnicode              //  函数返回值
+    //  获取转换后的长度并分配内存
+    dwUnicodeLen = MultiByteToWideChar(CP_UTF8, 0, UTF8, -1, NULL, 0);
+    pwText = new TCHAR[dwUnicodeLen];
+    if(!pwText)
+    {
+        return (_T("失败")）；
+    }
+    //  转换为Unicode
+    MultiByteToWideChar(CP_UTF8, 0, UTF8, -1, pwText, dwUnicodeLen);
+    //  转换为CString
+    strUnicode.Format(_T("%s"), pwText);
+    //  清除内存
+    delete[] pwText;
+    //  返回值
+    return strUnicode;
+}
+</code></pre>
 
-DLL_API fun1();
-DLL_API fun2();
-...</code></pre>
-<p><strong>缺点：</strong> <strong>无法导出类的成员函数</strong>，只能导出全局函数，且函数调用约定改变，仍会改编函数的名字，因此这种情况需要使用<strong>添加模块定义文件（.def）</strong></p>
-<pre class=" language-c++"><code class="language-c++">LIBRARY DllName(必须和生成的动态链接库名字匹配)
+<p>回过头来看其实并没有什么技术含量（所以总结下来教训就是：知识和经验不够带来的就是时间代价），主要就是用 MultiByteToWideChar()这个函数按指定编码规则（CP_UTF8说明这里是按UTF-8解码）实现多字节向宽字符转换</p>
+<p>最后出于功能完整性以及用户体验性考虑（其实是懒）决定将答案自动复制到剪贴板，这样使用过程中就只需要粘贴了，也附上代码</p>
+<pre><code>
+void XXDlg::CopyToClipBoard(CString str)
+{
+    if (this-&gt;OpenClipboard())
+    {
+        LPSTR pBuf = NULL;
+        LPCTSTR pSrc = (LPCTSTR) str;
+        size_t nLen = (_tcslen(pSrc)) + 1) * sizeof(TCHAR);
+        ::EmptyClipboard();
+        pBuf = (LPSTR) ::GlobalAlloc(GMEM_DDESHARE, nLen);
+        memcpy(pBuf, pSrc, nLen);
+        ::SetClipboardData(CF_UNICODETEXT, pBuf);
+        ::CloseClipboard();
+    }
+    else
+    {
+    	GetDlgItem(IDC_TMDA)-&gt;SetWindowTextW(_T("复制失败"))；
+	}
+}
+</code></pre>
 
-EXPORTS
-funName1(只需要函数名)
-funName2
-...</code></pre>
+<p>最近发现自己以前花时间搜索实现的代码，要么不知道放哪去了，要么不记得怎么使用了，所以决定简单记录一下用过的一些代码片段，方便以后需要的时候不用再花费时间去检索了</p>
 
             </div>
             <hr/>
@@ -538,7 +551,7 @@ funName2
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://walgh.gitee.io/2020/11/17/dong-tai-lian-jie-ku/">https://walgh.gitee.io/2020/11/17/dong-tai-lian-jie-ku/</a>
+                    <a href="https://walgh.gitee.io/posts/3cfe74b4/">https://walgh.gitee.io/posts/3cfe74b4/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,12 +589,12 @@ funName2
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
+                                    <span class="chip bg-color">字符编码</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
-                                    <span class="chip bg-color">动态链接库</span>
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
                                 </a>
                             
                         </div>
@@ -753,31 +766,31 @@ funName2
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/19/wang-luo-ji-chu/">
+                <a href="/posts/29b48e9/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="动态链接库">
                         
-                        <span class="card-title">网络基础</span>
+                        <span class="card-title">动态链接库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文CCNA课程的第一讲，主要对一些网络基础知识进行介绍
+                            主要介绍C/C++创建和导出动态库的相关知识，涉及函数的导出、类的导出以及动态库的使用
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CCNA/" class="post-category">
-                                    CCNA
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
                                 </a>
                             
                             
@@ -787,12 +800,12 @@ funName2
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CCNA/">
-                        <span class="chip bg-color">CCNA</span>
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
                     </a>
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
+                        <span class="chip bg-color">动态链接库</span>
                     </a>
                     
                 </div>
@@ -803,10 +816,10 @@ funName2
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/17/utf-8-zhuan-kuan-zi-fu/">
+                <a href="/posts/3cfe74b4/">
                     <div class="card-image">
                         
                         
@@ -837,6 +850,7 @@ funName2
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     

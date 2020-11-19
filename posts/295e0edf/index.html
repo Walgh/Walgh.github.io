@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="TCP-IP协议簇, 瓦良格号">
+    <meta name="keywords" content="Hexo+gitee搭建自己的博客以及那些踩过的坑儿, 瓦良格号">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>TCP-IP协议簇 | 瓦良格号</title>
+    <title>Hexo+gitee搭建自己的博客以及那些踩过的坑儿 | 瓦良格号</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -212,7 +212,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/walgh" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -269,7 +269,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/walgh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">TCP-IP协议簇</h1>
+                    <h1 class="description center-align post-title">Hexo+gitee搭建自己的博客以及那些踩过的坑儿</h1>
                 </div>
             </div>
         </div>
@@ -410,12 +410,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CCNA/">
-                                <span class="chip bg-color">CCNA</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">网络基础</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -426,8 +422,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CCNA/" class="post-category">
-                                CCNA
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
                             </a>
                         
                     </div>
@@ -453,7 +449,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    316
+                    0
                 </div>
                 
 
@@ -470,34 +466,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-常见协议"><a href="#1-常见协议" class="headerlink" title="1 常见协议"></a>1 常见协议</h1><h2 id="1-1-常见协议"><a href="#1-1-常见协议" class="headerlink" title="1.1 常见协议"></a>1.1 常见协议</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/常见协议.PNG" alt="常见协议" style="zoom:60%;">
-
-<h2 id="1-2-TCP头部"><a href="#1-2-TCP头部" class="headerlink" title="1.2 TCP头部"></a>1.2 TCP头部</h2><img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP头部.PNG" alt="TCP头部" style="zoom:60%;">
-
-<h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p>
-<img src="/2020/11/19/tcp-ip-xie-yi-cu/三次握手.PNG" alt="三次握手" style="zoom:60%;">
-
-<h1 id="3-滑动窗口"><a href="#3-滑动窗口" class="headerlink" title="3 滑动窗口"></a>3 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p>
-<img src="/2020/11/19/tcp-ip-xie-yi-cu/滑动窗口.PNG" alt="滑动窗口" style="zoom:60%;">
-
-<h1 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p>
-<img src="/2020/11/19/tcp-ip-xie-yi-cu/四次挥手.PNG" alt="四次挥手" style="zoom:60%;">
-
-<h1 id="5-端口号类型"><a href="#5-端口号类型" class="headerlink" title="5 端口号类型"></a>5 端口号类型</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/端口类型.PNG" alt="端口类型" style="zoom:60%;">
-
-<h1 id="6-TCP数据段重组"><a href="#6-TCP数据段重组" class="headerlink" title="6 TCP数据段重组"></a>6 TCP数据段重组</h1><p>使用序列号</p>
-<img src="/2020/11/19/tcp-ip-xie-yi-cu/TCP数据段重组.PNG" alt="TCP数据段重组" style="zoom:60%;">
-
-<h1 id="7-UDP数据段重组"><a href="#7-UDP数据段重组" class="headerlink" title="7 UDP数据段重组"></a>7 UDP数据段重组</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;">
-
-<h1 id="8-IP"><a href="#8-IP" class="headerlink" title="8 IP"></a>8 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p>
-<img src="/2020/11/19/tcp-ip-xie-yi-cu/IP报头.PNG" alt="IP报头" style="zoom:60%;">
-
-<h2 id="8-1-常见IP协议"><a href="#8-1-常见IP协议" class="headerlink" title="8.1 常见IP协议"></a>8.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p>
-<img src="/2020/11/19/tcp-ip-xie-yi-cu/ICMP.PNG" alt="ICMP" style="zoom:60%;">
-
-<p>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p>
-<h1 id="9-双绞线制作"><a href="#9-双绞线制作" class="headerlink" title="9 双绞线制作"></a>9 双绞线制作</h1><img src="/2020/11/19/tcp-ip-xie-yi-cu/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">
+                
             </div>
             <hr/>
 
@@ -522,7 +491,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://walgh.gitee.io/2020/11/19/tcp-ip-xie-yi-cu/">https://walgh.gitee.io/2020/11/19/tcp-ip-xie-yi-cu/</a>
+                    <a href="https://walgh.gitee.io/posts/295e0edf/">https://walgh.gitee.io/posts/295e0edf/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,12 +529,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CCNA/">
-                                    <span class="chip bg-color">CCNA</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">网络基础</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -733,50 +698,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/11/19/ip-zi-wang-gui-hua/">
+                <a href="/posts/295e0edf/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IP子网规划">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Hexo+gitee搭建自己的博客以及那些踩过的坑儿">
                         
-                        <span class="card-title">IP子网规划</span>
+                        <span class="card-title">Hexo+gitee搭建自己的博客以及那些踩过的坑儿</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CCNA课程的第三讲，主要涉及IP子网概念相关知识
+                            采用Hexo+gitee快速搭建博客，并记录过程中踩过的一些坑儿
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CCNA/" class="post-category">
-                                    CCNA
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">IP子网规划</span>
-                    </a>
-                    
-                    <a href="/tags/CCNA/">
-                        <span class="chip bg-color">CCNA</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -790,19 +753,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/19/wang-luo-ji-chu/">
+                <a href="/posts/5ee816e0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="网络基础">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="IP子网规划">
                         
-                        <span class="card-title">网络基础</span>
+                        <span class="card-title">IP子网规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文CCNA课程的第一讲，主要对一些网络基础知识进行介绍
+                            CCNA课程的第三讲，主要涉及IP子网概念相关知识
                         
                     </div>
                     <div class="publish-info">
@@ -824,12 +787,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CCNA/">
-                        <span class="chip bg-color">CCNA</span>
+                    <a href="/tags/IP%E5%AD%90%E7%BD%91%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">IP子网规划</span>
                     </a>
                     
-                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/CCNA/">
+                        <span class="chip bg-color">CCNA</span>
                     </a>
                     
                 </div>
