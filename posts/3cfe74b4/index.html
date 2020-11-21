@@ -26,13 +26,13 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    <link rel="stylesheet" href="/js/prism/prism.css">
     <script src="/libs/jquery/jquery.min.js"></script>
+
 
 <meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -433,12 +433,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
-                            </a>
-                        
                             <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
                                 <span class="chip bg-color">字符编码</span>
+                            </a>
+                        
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
                             </a>
                         
                     </div>
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    808
+                    810
                 </div>
                 
 
@@ -506,7 +506,7 @@
 <img src="/posts/3cfe74b4/程序组成框图.bmp" alt="程序组成框图" style="zoom:60%;">
 
 <p>因为之前对字符编码方式不甚了解，所以在答案显示这一步花费了不少时间。BD了一圈，CSDN也晃悠了一圈，试验了好几段代码均以失败告终，最后还是找到了一段代码，避免以后走弯路，所以在这里写下来</p>
-<pre class="line-numbers language-C++"><code class="language-C++">CString XXDlg::UTF8ToUnicode(char* UTF8)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">CString XXDlg::UTF8ToUnicode(char* UTF8)
 {
     DWORD dwUnicodeLen;             //  转换后Unicode的长度
     TCHAR* pwText;                  //  保存Unicode的指针
@@ -527,11 +527,12 @@
     //  返回值
     return strUnicode;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>回过头来看其实并没有什么技术含量（所以总结下来教训就是：知识和经验不够带来的就是时间代价），主要就是用 MultiByteToWideChar()这个函数按指定编码规则（CP_UTF8说明这里是按UTF-8解码）实现多字节向宽字符转换</p>
 <p>最后出于功能完整性以及用户体验性考虑（其实是懒）决定将答案自动复制到剪贴板，这样使用过程中就只需要粘贴了，也附上代码</p>
-<pre class="line-numbers language-C++"><code class="language-C++">void XXDlg::CopyToClipBoard(CString str)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void XXDlg::CopyToClipBoard(CString str)
 {
-    if (this->OpenClipboard())
+    if (this-&gt;OpenClipboard())
     {
         LPSTR pBuf = NULL;
         LPCTSTR pSrc = (LPCTSTR) str;
@@ -544,9 +545,10 @@
     }
     else
     {
-        GetDlgItem(IDC_TMDA)->SetWindowTextW(_T("复制失败"))；
-    }
+    	GetDlgItem(IDC_TMDA)-&gt;SetWindowTextW(_T("复制失败"))；
+	}
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>最近发现自己以前花时间搜索实现的代码，要么不知道放哪去了，要么不记得怎么使用了，所以决定简单记录一下用过的一些代码片段，方便以后需要的时候不用再花费时间去检索了</p>
 
             </div>
@@ -611,12 +613,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
                                     <span class="chip bg-color">字符编码</span>
+                                </a>
+                            
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
                                 </a>
                             
                         </div>
@@ -1139,12 +1141,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
-                    </a>
-                    
                     <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
                         <span class="chip bg-color">字符编码</span>
+                    </a>
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
                     </a>
                     
                 </div>
@@ -1402,7 +1404,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
     </div>
 </footer>
-
+<script src="/js/prism/prism.js" async></script>
 <div class="progress-bar"></div>
 
 
