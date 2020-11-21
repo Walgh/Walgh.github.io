@@ -26,13 +26,14 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <link rel="stylesheet" href="/js/prism/prism.css">
+
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
 <meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
+<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -476,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    549
+                    548
                 </div>
                 
 
@@ -502,14 +503,13 @@
 <img src="/posts/a89fb9b6/微信图片_20201121131716.png" style="zoom:60%;">
 
 <p>4、在你文章需要引用图片的地方采用markdown语言对图片进行引用，如本文示例：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url">![<span class="token content">你想输入的替代文字，就是图的标题</span>](Hexo文章中插入本地图片的解决办法\XXX.jpg)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token url">![你想输入的替代文字，就是图的标题](Hexo文章中插入本地图片的解决办法\XXX.jpg)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>此时可以看到效果图如下所示：</p>
 <img src="/posts/a89fb9b6/２.png" style="zoom:60%;">
 
 <p>你以为这样就没问题了，实际上该种方法在部署后是无法显示图片的，不相信，你可以尝试一下</p>
 <p>那么正确的解决姿势是怎样的呢？经过笔者实践，只有采用标签方式嵌入才能正常显示，废话不说，直接上代码</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hexo文章中插入本地图片的解决办法\XXX.png<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span>60%<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Hexo文章中插入本地图片的解决办法\XXX.png<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">60%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在你文章中需要引用图片的地方，插入上述代码即可正常在网页显示。如果你使用的Typora编辑器进行文章撰写，那么这个代码不需要你自己书写，你只需要点击菜单栏的格式-图像-插入本地图片后，选择缩放比例，它会自动替你生成，然后千万记住在生成代码后，加路径删除多余的部分，只留下<strong>你文章名字命名的文件夹\XXX.jpg</strong></p>
 <blockquote>
 <p><strong>注：</strong>如果上述方式你不够喜欢的话，你也可以采用CDN引用的方式将图片地址直接拿来引用，当然这就需要你将图片上传了，选择一个合适的图床工具也比较重要，这里推荐 PicGo图床服务，他可以采用github和gitee作为你图片的存储仓库，还可以集成到Typora中，相当好用，具体使用方法，请自行百度食用</p>
@@ -1125,11 +1125,17 @@
 
 <!-- 代码语言 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
 
 <!-- 代码块复制 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1363,7 +1369,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
     </div>
 </footer>
-<script src="/js/prism/prism.js" async></script>
+
 <div class="progress-bar"></div>
 
 
