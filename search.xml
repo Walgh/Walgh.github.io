@@ -33,7 +33,7 @@
       <link href="posts/a89fb9b6/"/>
       <url>posts/a89fb9b6/</url>
       
-        <content type="html"><![CDATA[<p>1、首先，需要将站点配置文件中的<code>post_asset_folder</code>设置为<code> true</code><br>2、在站点根目录下运行Git命令行窗口，输入<code>npm install hexo-asset-image –save</code>来安装一个上传本地图片的插件<br>3、插件安装完毕后，使用<code>hexo new 文章名</code>生成新文章时，除了生成<code>.md</code>文件后，还会生成一个同名的文件夹，采用该文件夹来存储你博文中需要使用的图片</p><img src="/posts/a89fb9b6/微信图片_20201121131716.png" style="zoom:60%;"><p>4、在你文章需要引用图片的地方采用markdown语言对图片进行引用，如本文示例：</p><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token url">![你想输入的替代文字，就是图的标题](Hexo文章中插入本地图片的解决办法\XXX.jpg)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此时可以看到效果图如下所示：</p><img src="/posts/a89fb9b6/２.png" style="zoom:60%;"><p>你以为这样就没问题了，实际上该种方法在部署后是无法显示图片的，不相信，你可以尝试一下</p><p>那么正确的解决姿势是怎样的呢？经过笔者实践，只有采用标签方式嵌入才能正常显示，废话不说，直接上代码</p><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Hexo文章中插入本地图片的解决办法\XXX.png<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">60%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在你文章中需要引用图片的地方，插入上述代码即可正常在网页显示。如果你使用的Typora编辑器进行文章撰写，那么这个代码不需要你自己书写，你只需要点击菜单栏的格式-图像-插入本地图片后，选择缩放比例，它会自动替你生成，然后千万记住在生成代码后，加路径删除多余的部分，只留下<strong>你文章名字命名的文件夹\XXX.jpg</strong></p><blockquote><p>**注:**如果上述方式你不够喜欢的话，你也可以采用CDN引用的方式将图片地址直接拿来引用，当然这就需要你将图片上传了，选择一个合适的图床工具也比较重要，这里推荐 PicGP图床服务，他可以采用github和gitee作为你图片的存储仓库，还可以集成到Typora中，相当好用，具体使用方法，请自行百度食用</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>1、首先，需要将站点配置文件中的<code>post_asset_folder</code>设置为<code> true</code><br>2、在站点根目录下运行Git命令行窗口，输入<code>npm install hexo-asset-image –save</code>来安装一个上传本地图片的插件<br>3、插件安装完毕后，使用<code>hexo new 文章名</code>生成新文章时，除了生成<code>.md</code>文件后，还会生成一个同名的文件夹，采用该文件夹来存储你博文中需要使用的图片</p><img src="/posts/a89fb9b6/微信图片_20201121131716.png" style="zoom:60%;"><p>4、在你文章需要引用图片的地方采用markdown语言对图片进行引用，如本文示例：</p><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token url">![你想输入的替代文字，就是图的标题](Hexo文章中插入本地图片的解决办法\XXX.jpg)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此时可以看到效果图如下所示：</p><img src="/posts/a89fb9b6/２.png" style="zoom:60%;"><p>你以为这样就没问题了，实际上该种方法在部署后是无法显示图片的，不相信，你可以尝试一下</p><p>那么正确的解决姿势是怎样的呢？经过笔者实践，只有采用标签方式嵌入才能正常显示，废话不说，直接上代码</p><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Hexo文章中插入本地图片的解决办法\XXX.png<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">60%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在你文章中需要引用图片的地方，插入上述代码即可正常在网页显示。如果你使用的Typora编辑器进行文章撰写，那么这个代码不需要你自己书写，你只需要点击菜单栏的格式-图像-插入本地图片后，选择缩放比例，它会自动替你生成，然后千万记住在生成代码后，加路径删除多余的部分，只留下<strong>你文章名字命名的文件夹\XXX.jpg</strong></p><blockquote><p><strong>注：</strong>如果上述方式你不够喜欢的话，你也可以采用CDN引用的方式将图片地址直接拿来引用，当然这就需要你将图片上传了，选择一个合适的图床工具也比较重要，这里推荐 PicGo图床服务，他可以采用github和gitee作为你图片的存储仓库，还可以集成到Typora中，相当好用，具体使用方法，请自行百度食用</p></blockquote>]]></content>
       
       
       <categories>
@@ -124,9 +124,9 @@
       
         <tags>
             
-            <tag> CCNA </tag>
-            
             <tag> IP子网规划 </tag>
+            
+            <tag> CCNA </tag>
             
         </tags>
       
@@ -232,9 +232,9 @@
       
         <tags>
             
-            <tag> 字符编码 </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> 字符编码 </tag>
             
         </tags>
       
