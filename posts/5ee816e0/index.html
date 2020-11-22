@@ -30,10 +30,10 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -470,14 +470,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-19
+                    2020-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    469
+                    474
                 </div>
                 
 
@@ -499,27 +499,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1 IP地址"></a>1 IP地址</h1><p>网络层概念<br>主机唯一的标志，保证主机间正常通信<br>IPv4地址由32bit组成</p>
-<h1 id="2-IP地址分类"><a href="#2-IP地址分类" class="headerlink" title="2 IP地址分类"></a>2 IP地址分类</h1><p>IP地址共分A|B|C|D|E5个类别</p>
+                <h1 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1 IP地址"></a>1 IP地址</h1><ul>
+<li>网络层概念</li>
+<li>主机唯一的标志，保证主机间正常通信</li>
+<li>IPv4地址由32bit组成</li>
+</ul>
+<h1 id="2-IP地址分类"><a href="#2-IP地址分类" class="headerlink" title="2 IP地址分类"></a>2 IP地址分类</h1><ul>
+<li>IP地址共分A|B|C|D|E5个类别</li>
+</ul>
 <img src="/posts/5ee816e0/IP地址分类.PNG" alt="IP地址分类" style="zoom:60%;">
 
-<h2 id="2-1-特殊IPv4地址"><a href="#2-1-特殊IPv4地址" class="headerlink" title="2.1 特殊IPv4地址"></a>2.1 特殊IPv4地址</h2><p>网络地址和广播地址<br>默认路由：0.0.0.0<br>环回地址：127.0.0.0/8 用于测试<br>链路本地地址：169.254.0.0/16 Windows<br>TEST-NET地址：192.0.2.0/24 保留地址</p>
-<h1 id="3-IP地址的组成"><a href="#3-IP地址的组成" class="headerlink" title="3 IP地址的组成"></a>3 IP地址的组成</h1><p>IP地址由两部分组成<br> 网络部分（NETWORK）<br> 主机部分（HOST）</p>
+<h2 id="2-1-特殊IPv4地址"><a href="#2-1-特殊IPv4地址" class="headerlink" title="2.1 特殊IPv4地址"></a>2.1 特殊IPv4地址</h2><ul>
+<li>网络地址和广播地址</li>
+<li>默认路由：0.0.0.0</li>
+<li>环回地址：127.0.0.0/8 用于测试</li>
+<li>链路本地地址：169.254.0.0/16 Windows</li>
+<li>TEST-NET地址：192.0.2.0/24 保留地址</li>
+</ul>
+<h1 id="3-IP地址的组成"><a href="#3-IP地址的组成" class="headerlink" title="3 IP地址的组成"></a>3 IP地址的组成</h1><p><strong>IP地址由两部分组成</strong></p>
+<ul>
+<li>网络部分（NETWORK）</li>
+<li>主机部分（HOST）</li>
+</ul>
 <img src="/posts/5ee816e0/IP地址组成.PNG" alt="IP地址组成" style="zoom:60%;">
 
 <img src="/posts/5ee816e0/IP地址分类2.PNG" alt="IP地址第二分类" style="zoom:60%;">
 
-<h1 id="4-子网掩码"><a href="#4-子网掩码" class="headerlink" title="4 子网掩码"></a>4 子网掩码</h1><p>用来确定IP的网络地址<br>32个二进制位<br>IP地址中的网络部分用1表示，主机部分用0表示<br>IP地址和子网掩码作逻辑“与”运算得到网络地址</p>
+<h1 id="4-子网掩码"><a href="#4-子网掩码" class="headerlink" title="4 子网掩码"></a>4 子网掩码</h1><ul>
+<li>用来确定IP的网络地址</li>
+<li>32个二进制位</li>
+<li>IP地址中的网络部分用1表示，主机部分用0表示</li>
+<li>IP地址和子网掩码作逻辑“与”运算得到网络地址</li>
+</ul>
 <h1 id="5-IPv4网络中的地址类型"><a href="#5-IPv4网络中的地址类型" class="headerlink" title="5 IPv4网络中的地址类型"></a>5 IPv4网络中的地址类型</h1><h2 id="5-1-网络地址"><a href="#5-1-网络地址" class="headerlink" title="5.1 网络地址"></a>5.1 网络地址</h2><p>指代网络的地址，在网络的IPv4地址范围内，最小地址保留为网络地址。此地址的主机部分的每一个主机位为0</p>
 <h2 id="5-2-广播地址"><a href="#5-2-广播地址" class="headerlink" title="5.2 广播地址"></a>5.2 广播地址</h2><p>用于向网络中的所有主机发送数据的特殊地址。广播地址使用该网络范围内的最大地址。即主机部分的各比特位全部为1的地址。</p>
 <h2 id="5-3-主机地址"><a href="#5-3-主机地址" class="headerlink" title="5.3 主机地址"></a>5.3 主机地址</h2><p>分配给网络中终端设备的地址</p>
 <h1 id="6-划分子网"><a href="#6-划分子网" class="headerlink" title="6 划分子网"></a>6 划分子网</h1><p>子网划分：将网络划分为适当大小的多个子网</p>
-<h2 id="6-1-为什么要划分子网？"><a href="#6-1-为什么要划分子网？" class="headerlink" title="6.1 为什么要划分子网？"></a>6.1 为什么要划分子网？</h2><ol>
+<h2 id="6-1-为什么要划分子网？"><a href="#6-1-为什么要划分子网？" class="headerlink" title="6.1 为什么要划分子网？"></a>6.1 为什么要划分子网？</h2><ul>
 <li>提供灵活的编制</li>
 <li>便于管理</li>
-<li>广播抑制<br>“借用”主机位来“制造”新的“网络”（网络位向主机位借位）</li>
-</ol>
-<h2 id="6-2-子网划分原理"><a href="#6-2-子网划分原理" class="headerlink" title="6.2 子网划分原理"></a>6.2 子网划分原理</h2><p>IP地址经过一次子网划分后，被分成3个部分——网络位、子网位和主机位<br>子网数=2^n，其中n为子网部分位数<br>主机数=2^N-2，其中N为主机部分位数</p>
+<li>广播抑制</li>
+<li>“借用”主机位来“制造”新的“网络”（网络位向主机位借位）</li>
+</ul>
+<h2 id="6-2-子网划分原理"><a href="#6-2-子网划分原理" class="headerlink" title="6.2 子网划分原理"></a>6.2 子网划分原理</h2><ul>
+<li>IP地址经过一次子网划分后，被分成3个部分——网络位、子网位和主机位</li>
+<li>子网数=2^n，其中n为子网部分位数</li>
+<li>主机数=2^N-2，其中N为主机部分位数</li>
+</ul>
 
             </div>
             <hr/>
@@ -1318,7 +1344,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">10.1k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="UTF-8转宽字符, 瓦良格号">
+    <meta name="keywords" content="交换基础, 瓦良格号">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>UTF-8转宽字符 | 瓦良格号</title>
+    <title>交换基础 | 瓦良格号</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">UTF-8转宽字符</h1>
+                    <h1 class="description center-align post-title">交换基础</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,24 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
-                                <span class="chip bg-color">字符编码</span>
+                            <a href="/tags/CCNA/">
+                                <span class="chip bg-color">CCNA</span>
                             </a>
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/VLAN/">
+                                <span class="chip bg-color">VLAN</span>
+                            </a>
+                        
+                            <a href="/tags/SVI%E6%8E%A5%E5%8F%A3/">
+                                <span class="chip bg-color">SVI接口</span>
+                            </a>
+                        
+                            <a href="/tags/Trunk/">
+                                <span class="chip bg-color">Trunk</span>
+                            </a>
+                        
+                            <a href="/tags/VTP/">
+                                <span class="chip bg-color">VTP</span>
                             </a>
                         
                     </div>
@@ -450,8 +462,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/C-C/" class="post-category">
-                                C/C++
+                            <a href="/categories/CCNA/" class="post-category">
+                                CCNA
                             </a>
                         
                     </div>
@@ -463,7 +475,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-17
+                    2020-11-22
                 </div>
                 
 
@@ -477,14 +489,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    830
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -499,57 +511,112 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>写这个主要是记录一下两个函数功能</p>
-<p>事情起源于对某答题系统实现自动获取答案功能</p>
-<p>该答题系统采用TCP协议进行数据传输，通过wireshark抓包分析得出该答题系统的答案校验功能在客户端运行而非服务器端（也许是出于服务器无法承受多用户同时提交答案校验），服务器向客户端传输的TCP包中同时包含题目和答案，分别在对应的标签中，于是为自动获取答案创造了有利条件</p>
-<p>数据获取可以通过winpcap开发包简单方便实现，于是利用该库写了一个dll（TCPCapture.dll）实现对指定服务器地址的指定协议数据包进行无间断抓取，提供给程序抓包线程调用</p>
-<p>组报和报文解析单独开辟线程处理。提取答案时，由于字节流采用UTF-8编码，如何将中文显示到MFC对话框内，花费了一些时间研究。其实如果你是使用Python编程，会简单很多，Python支持指定编码方式解析字节流，提取标签内容可以采用正则表达式或者find函数对关键词搜索即可，但为了追求原汁原味和尽可能减少程序依赖库（其实是因为用惯了C++），我选择了自己编码解析（自己摧残自己）</p>
-<img src="/posts/3cfe74b4/程序组成框图.bmp" alt="程序组成框图" style="zoom:60%;">
+                <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><p>典型的园区网分层结构如图所示，交换技术主要聚焦接入层</p>
+<img src="/posts/edee84da/园区网分层结构.png" alt="园区网分层结构" style="zoom:60%;">
 
-<p>因为之前对字符编码方式不甚了解，所以在答案显示这一步花费了不少时间。BD了一圈，CSDN也晃悠了一圈，试验了好几段代码均以失败告终，最后还是找到了一段代码，避免以后走弯路，所以在这里写下来</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">CString XXDlg<span class="token operator">::</span><span class="token function">UTF8ToUnicode</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> UTF8<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    DWORD dwUnicodeLen<span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">//  转换后Unicode的长度</span>
-    TCHAR<span class="token operator">*</span> pwText<span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//  保存Unicode的指针</span>
-    CString strUnicode              <span class="token comment" spellcheck="true">//  函数返回值</span>
-    <span class="token comment" spellcheck="true">//  获取转换后的长度并分配内存</span>
-    dwUnicodeLen <span class="token operator">=</span> <span class="token function">MultiByteToWideChar</span><span class="token punctuation">(</span>CP_UTF8<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> UTF8<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    pwText <span class="token operator">=</span> <span class="token keyword">new</span> TCHAR<span class="token punctuation">[</span>dwUnicodeLen<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>pwText<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">_T</span><span class="token punctuation">(</span><span class="token string">"失败"</span><span class="token punctuation">)</span>）；
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//  转换为Unicode</span>
-    <span class="token function">MultiByteToWideChar</span><span class="token punctuation">(</span>CP_UTF8<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> UTF8<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> pwText<span class="token punctuation">,</span> dwUnicodeLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//  转换为CString</span>
-    strUnicode<span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token function">_T</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pwText<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//  清除内存</span>
-    <span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span> pwText<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//  返回值</span>
-    <span class="token keyword">return</span> strUnicode<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>回过头来看其实并没有什么技术含量（所以总结下来教训就是：知识和经验不够带来的就是时间代价），主要就是用 MultiByteToWideChar()这个函数按指定编码规则（CP_UTF8说明这里是按UTF-8解码）实现多字节向宽字符转换</p>
-<p>最后出于功能完整性以及用户体验性考虑（其实是懒）决定将答案自动复制到剪贴板，这样使用过程中就只需要粘贴了，也附上代码</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> XXDlg<span class="token operator">::</span><span class="token function">CopyToClipBoard</span><span class="token punctuation">(</span>CString str<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">OpenClipboard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        LPSTR pBuf <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-        LPCTSTR pSrc <span class="token operator">=</span> <span class="token punctuation">(</span>LPCTSTR<span class="token punctuation">)</span> str<span class="token punctuation">;</span>
-        size_t nLen <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">_tcslen</span><span class="token punctuation">(</span>pSrc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>TCHAR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">::</span><span class="token function">EmptyClipboard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pBuf <span class="token operator">=</span> <span class="token punctuation">(</span>LPSTR<span class="token punctuation">)</span> <span class="token operator">::</span><span class="token function">GlobalAlloc</span><span class="token punctuation">(</span>GMEM_DDESHARE<span class="token punctuation">,</span> nLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">memcpy</span><span class="token punctuation">(</span>pBuf<span class="token punctuation">,</span> pSrc<span class="token punctuation">,</span> nLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">::</span><span class="token function">SetClipboardData</span><span class="token punctuation">(</span>CF_UNICODETEXT<span class="token punctuation">,</span> pBuf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">::</span><span class="token function">CloseClipboard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token function">GetDlgItem</span><span class="token punctuation">(</span>IDC_TMDA<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">SetWindowTextW</span><span class="token punctuation">(</span><span class="token function">_T</span><span class="token punctuation">(</span><span class="token string">"复制失败"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>；
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>最近发现自己以前花时间搜索实现的代码，要么不知道放哪去了，要么不记得怎么使用了，所以决定简单记录一下用过的一些代码片段，方便以后需要的时候不用再花费时间去检索了</p>
+<h2 id="1-1-交换机主要功能"><a href="#1-1-交换机主要功能" class="headerlink" title="1.1 交换机主要功能"></a>1.1 交换机主要功能</h2><ul>
+<li>地址学习</li>
+<li>转发和过滤数据帧</li>
+<li>环路避免</li>
+</ul>
+<h2 id="1-2-MAC地址"><a href="#1-2-MAC地址" class="headerlink" title="1.2 MAC地址"></a>1.2 MAC地址</h2><ul>
+<li>48位，通常被表示为点分十六进制数</li>
+<li>前24位二进制表示供应商代码，剩余的24位由厂商自己分配</li>
+<li>MAC地址全球唯一，由IEEE对这些地址进行管理和分配</li>
+</ul>
+<h2 id="1-3-交换寻址"><a href="#1-3-交换寻址" class="headerlink" title="1.3 交换寻址"></a>1.3 交换寻址</h2><img src="/posts/edee84da/交换寻址1.png" alt="交换寻址1" style="zoom:60%;">
 
+<p>假设交换机有E0(A)、E1(B)、E2(C)、E3(D)四个接口。交换机第一次工作时，初始化MAC地址表为空。当A发数据包给D时，交换机解出源MAC，并且知道数据包由哪个接口来，所以地址表中会加入E0及其对应的MAC地址，但此时它不知道目的MAC是哪个接口，所以它会广播该数据包，而B、C、D收到数据包后，只有D会回包，此时交换机就会添加E3及其对应的MAC地址，这就是交换机的学习过程。当A再次发送数据包给D时，由于MAC地址表已经存储了E3对应的MAC，此时交换机不会再广播该数据包，而是直接传至E3接口。</p>
+<img src="/posts/edee84da/交换寻址2.png" alt="交换寻址2" style="zoom:60%;">
+
+<p>交换机还存在一个老化时间的概念，该值默认为300s。MAC地址表数据项的删除，会在两种情况下发生，<strong>其一</strong>是当某一设备拔掉时，交换机会立刻删除MAC表中该项，<strong>其二</strong>是当某一设备的老化时间计数达到阈值，交换机也会删除该项。</p>
+<h1 id="2-VLAN技术"><a href="#2-VLAN技术" class="headerlink" title="2 VLAN技术"></a>2 VLAN技术</h1><h2 id="2-1-VLAN概述"><a href="#2-1-VLAN概述" class="headerlink" title="2.1 VLAN概述"></a>2.1 VLAN概述</h2><ul>
+<li>分段性</li>
+<li>灵活性</li>
+<li>安全性</li>
+</ul>
+<img src="/posts/edee84da/某部门网络解决方案.png" alt="某部门网络解决方案" style="zoom:60%;">
+如图所示，某公司要求1、2、3层各部门网络设别分别属于不同广播域，图示解决方案是一层楼架设一个交换机，这样每一层属于一个网段，但此时成本较高，若某一层只有一到两台终端，不太经济，因此诞生了**VLAN技术**。VLAN技术从**软件层面**，将**交换机的接口**划分为不同的广播域。
+
+<p><strong>VLAN的特点：</strong></p>
+<ul>
+<li>一个VALN就是一个广播域，也就是一个逻辑子网(网段)</li>
+<li>VLAN中成员多基于Switch端口号码，划分VLAN就是对Switch接口划分</li>
+<li>VLAN工作于OSI模型第二层</li>
+</ul>
+<h2 id="2-2-创建VLAN"><a href="#2-2-创建VLAN" class="headerlink" title="2.2 创建VLAN"></a>2.2 创建VLAN</h2><ul>
+<li><strong>创建VLAN信息</strong></li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># vlan 2              // 取值为1-4094</span>
+Switch<span class="token punctuation">(</span>config-vlan<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#name VLAN2</span>
+Switch<span class="token punctuation">(</span>config-vlan<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#exit            // 思科设备必须使用该命令退出，否则相当于未创建VLAN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>创建后可用<code>show vlan</code>查看创建结果</p>
+<ul>
+<li><strong>将端口划入特定的VLAN</strong></li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># interface fa0/1                // 进入该接口</span>
+Switch<span class="token punctuation">(</span>config-if<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># switchport mode access      // 设置接口模式</span>
+Switch<span class="token punctuation">(</span>config-if<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># switchport access [vlan vlan#|dynamic]   // 为接口指定VLAN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>Tip:</strong> 1、access接口是二层接口，SVI接口是三层接口<br>       2、批量进入多个接口使用命令<code>interface range ethernet 0/0 -2(你想要的范围)</code>实现连续端口，或者使用命令<code>interface range ethernet 0/0,0/4</code>实现非连续端口</p>
+</blockquote>
+<h2 id="2-3-SVI-三层接口-的两种类型"><a href="#2-3-SVI-三层接口-的两种类型" class="headerlink" title="2.3 SVI(三层接口)的两种类型"></a>2.3 SVI(三层接口)的两种类型</h2><ul>
+<li>主机管理接口，管理员可以利用该接口管理交换机</li>
+<li>网关接口，用于三层交换机跨vlan间路由（具备路由功能），具体可以用<code>interface vlan</code>接口位置命令来创建svi，然后为其配置IP地址即可实现路由功能</li>
+</ul>
+<p><strong>二层(数据链路层)交换机和三层(网络层)交换机的区别：</strong></p>
+<blockquote>
+<p>三层交换机具备路由功能，可以配置IP</p>
+</blockquote>
+<h1 id="3-Trunk技术"><a href="#3-Trunk技术" class="headerlink" title="3 Trunk技术"></a>3 Trunk技术</h1><h2 id="3-1-Trunk的概念"><a href="#3-1-Trunk的概念" class="headerlink" title="3.1 Trunk的概念"></a>3.1 Trunk的概念</h2><img src="/posts/edee84da/Trunk.png" alt="Trunk" style="zoom:60%;">
+**给不同的VLAN做上不同的标记，类似于通信中的复用**
+
+<h2 id="3-2-802-1Q"><a href="#3-2-802-1Q" class="headerlink" title="3.2 802.1Q"></a>3.2 802.1Q</h2><img src="/posts/edee84da/802.1Q帧结构.png" alt="802.1Q帧结构" style="zoom:60%;">
+
+<blockquote>
+<p>**Tip: **其中Native VLAN为本征VLAN，默认为vlan1</p>
+</blockquote>
+<h2 id="3-3-Trunk的基本配置"><a href="#3-3-Trunk的基本配置" class="headerlink" title="3.3 Trunk的基本配置"></a>3.3 Trunk的基本配置</h2><ul>
+<li><p><strong>配置Trunk封装模式</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">interface f0/15
+switchport trunk encapsulation <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;isl|dot1q&amp;#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>**Tip: **isl模式不用，只用dot1q</p>
+</blockquote>
+</li>
+<li><p><strong>开启端口trunk模式</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">switchport mode<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;dynamic&amp;#123;auto|desirable&amp;#125;|trunk&amp;#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>常用命令</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">switchport trunk allowed vlan 10        // 只允许vlan10使用trunk
+switchport trunk allowed vlan add 20    // 添加允许vlan20使用trunk
+switchport trunk allowed vlan remove 10 // 删除vlan10使用trunk
+switchport trunk allowed vlan all       // 放行所有vlan
+switchport trunk native vlan 10            // 修改本征vlan<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="4-VTP-VLAN-Trunking-Protocol"><a href="#4-VTP-VLAN-Trunking-Protocol" class="headerlink" title="4 VTP(VLAN Trunking Protocol)"></a>4 VTP(VLAN Trunking Protocol)</h1></li>
+<li><p>一个能够宣告VLAN配置信息的信息系统；</p>
+</li>
+<li><p>通过一个共有的管理域，维持VLAN配置信息的一致性</p>
+</li>
+<li><p>VTP只能在主干端口发送要宣告的信息</p>
+</li>
+<li><p>支持混合的介质主干连接(快速以太网，FDDI，ATM)</p>
+</li>
+</ul>
+<h2 id="4-1-VTP模式"><a href="#4-1-VTP模式" class="headerlink" title="4.1 VTP模式"></a>4.1 VTP模式</h2><img src="/posts/edee84da/VTP模式.png" alt="VTP模式" style="zoom:60%;">
+## 4.2 VTP的配置
+```bash
+Switch# configure terminal
+Switch(config)# vtp mode[server|client|transparent]
+Switch(config)# vtp domain domain-name
+Switch(config)# vtp password password
+Switch(config)# vtp pruning   // vtp修剪
+Switch(config)# vtp version 2 // 版本由1-3,常用2
+```
+&gt;**Tips:** 1、默认情况：VTP模式为server
+&gt;          2、VTP域名对大小写敏感
+&gt;          3、VTP密码对大小写敏感
+&gt;          4、VTP修剪默认关闭
             </div>
             <hr/>
 
@@ -574,7 +641,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://walgh.gitee.io/posts/3cfe74b4/">https://walgh.gitee.io/posts/3cfe74b4/</a>
+                    <a href="https://walgh.gitee.io/posts/edee84da/">https://walgh.gitee.io/posts/edee84da/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,12 +679,24 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
-                                    <span class="chip bg-color">字符编码</span>
+                                <a href="/tags/CCNA/">
+                                    <span class="chip bg-color">CCNA</span>
                                 </a>
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/VLAN/">
+                                    <span class="chip bg-color">VLAN</span>
+                                </a>
+                            
+                                <a href="/tags/SVI%E6%8E%A5%E5%8F%A3/">
+                                    <span class="chip bg-color">SVI接口</span>
+                                </a>
+                            
+                                <a href="/tags/Trunk/">
+                                    <span class="chip bg-color">Trunk</span>
+                                </a>
+                            
+                                <a href="/tags/VTP/">
+                                    <span class="chip bg-color">VTP</span>
                                 </a>
                             
                         </div>
@@ -1048,88 +1127,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/29b48e9/">
+                <a href="/posts/edee84da/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="动态链接库">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="交换基础">
                         
-                        <span class="card-title">动态链接库</span>
+                        <span class="card-title">交换基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要介绍C/C++创建和导出动态库的相关知识，涉及函数的导出、类的导出以及动态库的使用
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/C-C/" class="post-category">
-                                    C/C++
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
-                        <span class="chip bg-color">动态链接库</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/3cfe74b4/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="UTF-8转宽字符">
-                        
-                        <span class="card-title">UTF-8转宽字符</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            主要记录了UTF-8编码字符在MFC程序中如何解码的程序以及将字符串复制到剪贴板的程序
+                            CCNA课程第五讲，主要对交换基础——VLAN、Trunk等技术进行介绍
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C-C/" class="post-category">
-                                    C/C++
+                            <a href="/categories/CCNA/" class="post-category">
+                                    CCNA
                                 </a>
                             
                             
@@ -1140,12 +1167,73 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">字符编码</span>
+                    <a href="/tags/CCNA/">
+                        <span class="chip bg-color">CCNA</span>
                     </a>
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/VLAN/">
+                        <span class="chip bg-color">VLAN</span>
+                    </a>
+                    
+                    <a href="/tags/SVI%E6%8E%A5%E5%8F%A3/">
+                        <span class="chip bg-color">SVI接口</span>
+                    </a>
+                    
+                    <a href="/tags/Trunk/">
+                        <span class="chip bg-color">Trunk</span>
+                    </a>
+                    
+                    <a href="/tags/VTP/">
+                        <span class="chip bg-color">VTP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/dfb97fe6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Hexo博客新建文章自动打开markdown编辑器">
+                        
+                        <span class="card-title">Hexo博客新建文章自动打开markdown编辑器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            通过新建js脚本的方式，在新建文章的同时自动打开markdown编辑器编辑新建文章
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>

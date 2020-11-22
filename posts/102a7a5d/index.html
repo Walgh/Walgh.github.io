@@ -30,10 +30,10 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -470,14 +470,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-19
+                    2020-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    316
+                    319
                 </div>
                 
 
@@ -503,29 +503,50 @@
 
 <h2 id="1-2-TCP头部"><a href="#1-2-TCP头部" class="headerlink" title="1.2 TCP头部"></a>1.2 TCP头部</h2><img src="/posts/102a7a5d/TCP头部.PNG" alt="TCP头部" style="zoom:60%;">
 
-<h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><p>第一次：sender-&gt;reciever  发送SYN=1<br>第二次：reciever-&gt;sender  发送SYN=1 ACK=1<br>第三次：sender-&gt;reciever  发送ACK=1<br>ack = seq+1   小写ack确认序号</p>
+<h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2 三次握手"></a>2 三次握手</h1><ul>
+<li>第一次：sender-&gt;reciever  发送SYN=1</li>
+<li>第二次：reciever-&gt;sender  发送SYN=1 ACK=1</li>
+<li>第+三次：sender-&gt;reciever  发送ACK=1<ul>
+<li>ack = seq+1   小写ack确认序号</li>
+</ul>
+</li>
+</ul>
 <img src="/posts/102a7a5d/三次握手.PNG" alt="三次握手" style="zoom:60%;">
 
 <h1 id="3-滑动窗口"><a href="#3-滑动窗口" class="headerlink" title="3 滑动窗口"></a>3 滑动窗口</h1><p>reciever收到3个包将回传3个确认，sender知晓当前3个窗口空闲，继续发送3个包，避免网络拥堵</p>
 <img src="/posts/102a7a5d/滑动窗口.PNG" alt="滑动窗口" style="zoom:60%;">
 
-<h1 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h1><p>第一次：sender-&gt;reciever  发送FIN=1<br>第二次：reciever-&gt;sender  发送ACK=1<br>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1<br>第四次：sender-&gt;reciever  发送ACK=1</p>
+<h1 id="4-四次挥手"><a href="#4-四次挥手" class="headerlink" title="4 四次挥手"></a>4 四次挥手</h1><ul>
+<li>第一次：sender-&gt;reciever  发送FIN=1</li>
+<li>第二次：reciever-&gt;sender  发送ACK=1</li>
+<li>第三次：reciever-&gt;sender  发送FIN=1  因为此时sender虽然发起断开请求，但reciever不一定接收完数据，所以需要等待数据确认后由reciever向sender发送FIN=1</li>
+<li>第四次：sender-&gt;reciever  发送ACK=1</li>
+</ul>
 <img src="/posts/102a7a5d/四次挥手.PNG" alt="四次挥手" style="zoom:60%;">
 
 <h1 id="5-端口号类型"><a href="#5-端口号类型" class="headerlink" title="5 端口号类型"></a>5 端口号类型</h1><img src="/posts/102a7a5d/端口类型.PNG" alt="端口类型" style="zoom:60%;">
 
-<h1 id="6-TCP数据段重组"><a href="#6-TCP数据段重组" class="headerlink" title="6 TCP数据段重组"></a>6 TCP数据段重组</h1><p>使用序列号</p>
+<h1 id="6-TCP数据段重组"><a href="#6-TCP数据段重组" class="headerlink" title="6 TCP数据段重组"></a>6 TCP数据段重组</h1><ul>
+<li>使用序列号</li>
+</ul>
 <img src="/posts/102a7a5d/TCP数据段重组.PNG" alt="TCP数据段重组" style="zoom:60%;">
 
 <h1 id="7-UDP数据段重组"><a href="#7-UDP数据段重组" class="headerlink" title="7 UDP数据段重组"></a>7 UDP数据段重组</h1><img src="/posts/102a7a5d/UDP数据段重组.PNG" alt="UDP数据段重组" style="zoom:60%;">
 
-<h1 id="8-IP"><a href="#8-IP" class="headerlink" title="8 IP"></a>8 IP</h1><p>有IPv4(32bit)和IPv6(128bit)<br>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</p>
+<h1 id="8-IP"><a href="#8-IP" class="headerlink" title="8 IP"></a>8 IP</h1><ul>
+<li>有IPv4(32bit)和IPv6(128bit)</li>
+<li>TTL值：生命周期，每经过一次路由-1，当TTL为0时丢弃该数据包</li>
+</ul>
 <img src="/posts/102a7a5d/IP报头.PNG" alt="IP报头" style="zoom:60%;">
 
-<h2 id="8-1-常见IP协议"><a href="#8-1-常见IP协议" class="headerlink" title="8.1 常见IP协议"></a>8.1 常见IP协议</h2><p>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</p>
+<h2 id="8-1-常见IP协议"><a href="#8-1-常见IP协议" class="headerlink" title="8.1 常见IP协议"></a>8.1 常见IP协议</h2><ul>
+<li>ICMP(网际控制报文协议)：检测网络层的连通性，发送echo request，目标收到后，发送echo reply 常用命令有ping、traceroute</li>
+</ul>
 <img src="/posts/102a7a5d/ICMP.PNG" alt="ICMP" style="zoom:60%;">
 
-<p>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</p>
+<ul>
+<li>ARP(地址解析协议)：通过广播查询IP对应的MAC，有代理ARP和反向ARP</li>
+</ul>
 <h1 id="9-双绞线制作"><a href="#9-双绞线制作" class="headerlink" title="9 双绞线制作"></a>9 双绞线制作</h1><img src="/posts/102a7a5d/双绞线线序.PNG" alt="双绞线线序" style="zoom:60%;">
             </div>
             <hr/>
@@ -1328,7 +1349,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">10.1k</span>&nbsp;字
             
             
             

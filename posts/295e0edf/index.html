@@ -30,10 +30,10 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -466,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-20
+                    2020-11-22
                 </div>
                 
 
@@ -496,7 +496,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1 环境准备"></a>1 环境准备</h1><blockquote>
-<p>Git<br>Node.js<br>编辑器Visual Studio Code、Sublime Text、Notepad++等<br>具体安装方法不再赘述</p>
+<ul>
+<li>Git</li>
+<li>Node.js</li>
+<li>编辑器Visual Studio Code、Sublime Text、Notepad++等</li>
+<li>具体安装方法不再赘述</li>
+</ul>
 </blockquote>
 <h1 id="2-Git用户名和邮箱的配置"><a href="#2-Git用户名和邮箱的配置" class="headerlink" title="2 Git用户名和邮箱的配置"></a>2 Git用户名和邮箱的配置</h1><p>鼠标右键点击<code>Git Bash Here</code></p>
 <p>然后输入如下命令</p>
@@ -581,25 +586,25 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"friends"</span>
 <span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>同时，在你的博客 <code>source</code> 目录下新建 <code>_data</code> 目录，在 <code>_data</code> 目录中新建 <code>friends.json</code> 文件，文件内容如下所示：</p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">[</span>&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"http://image.luokangyuan.com/1_qq_27922023.jpg"</span><span class="token punctuation">,</span>
     <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"码酱"</span><span class="token punctuation">,</span>
     <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"我不是大佬，只是在追寻大佬的脚步"</span><span class="token punctuation">,</span>
     <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"http://luokangyuan.com/"</span><span class="token punctuation">,</span>
     <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去学习"</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"http://image.luokangyuan.com/4027734.jpeg"</span><span class="token punctuation">,</span>
     <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"闪烁之狐"</span><span class="token punctuation">,</span>
     <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬"</span><span class="token punctuation">,</span>
     <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://blinkfox.github.io/"</span><span class="token punctuation">,</span>
     <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去学习"</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"avatar"</span><span class="token operator">:</span> <span class="token string">"http://image.luokangyuan.com/avatar.jpg"</span><span class="token punctuation">,</span>
     <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ja_rome"</span><span class="token punctuation">,</span>
     <span class="token property">"introduction"</span><span class="token operator">:</span> <span class="token string">"平凡的脚步也可以走出伟大的行程"</span><span class="token punctuation">,</span>
     <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://me.csdn.net/jlh912008548"</span><span class="token punctuation">,</span>
     <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"前去学习"</span>
-<span class="token punctuation">}</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-2-7-新建-404-页"><a href="#4-2-7-新建-404-页" class="headerlink" title="4.2.7 新建 404 页"></a>4.2.7 新建 404 页</h3><p>如果在你的博客 <code>source</code> 目录下还没有 <code>404.md</code> 文件，那么你就需要新建一个<br>编辑你刚刚新建的页面文件 <code>/source/404.md</code>，至少需要以下内容：</p>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token number">404</span>
@@ -628,7 +633,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
   <span class="token key atrule">Friends</span><span class="token punctuation">:</span>
     <span class="token key atrule">url</span><span class="token punctuation">:</span> /friends
     <span class="token key atrule">icon</span><span class="token punctuation">:</span> fas fa<span class="token punctuation">-</span>address<span class="token punctuation">-</span>book<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-3-2-二级菜单配置方法"><a href="#4-3-2-二级菜单配置方法" class="headerlink" title="4.3.2 二级菜单配置方法"></a>4.3.2 二级菜单配置方法</h3><p>如果你需要二级菜单则可以在原基本菜单导航的基础上如下操作<br>1.在需要添加二级菜单的一级菜单下添加<code>children</code>关键字(如:<code>About</code>菜单下添加<code>children</code>)<br>2.在<code>children</code>下创建二级菜单的 名称name,路径url和图标icon.<br>3.注意每个二级菜单模块前要加 <code>-</code>.<br>4.注意缩进格式  </p>
+<h3 id="4-3-2-二级菜单配置方法"><a href="#4-3-2-二级菜单配置方法" class="headerlink" title="4.3.2 二级菜单配置方法"></a>4.3.2 二级菜单配置方法</h3><p>如果你需要二级菜单则可以在原基本菜单导航的基础上如下操作<br>(1).在需要添加二级菜单的一级菜单下添加<code>children</code>关键字(如:<code>About</code>菜单下添加<code>children</code>)<br>(2).在<code>children</code>下创建二级菜单的 名称name,路径url和图标icon.<br>(3).注意每个二级菜单模块前要加 <code>-</code>.<br>(4).注意缩进格式  </p>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">menu</span><span class="token punctuation">:</span>
   <span class="token key atrule">Index</span><span class="token punctuation">:</span>
     <span class="token key atrule">url</span><span class="token punctuation">:</span> /
@@ -686,8 +691,8 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <img src="/posts/295e0edf/搜索bug.PNG" alt="搜索bug" style="zoom:60%;">
 
 <p>经百度以及和群友交流后，得到一种解决方案，是在search.js中将其中一句代码作以下修改</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">-</span>str <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"&lt;li>&lt;a href='"</span> <span class="token operator">+</span> data_url <span class="token operator">+</span> <span class="token string">"' class='search-result-title'>"</span> <span class="token operator">+</span> data_title <span class="token operator">+</span> <span class="token string">"&lt;/a>"</span><span class="token punctuation">;</span> 
-<span class="token operator">+</span>str <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"&lt;li>&lt;a href='/"</span> <span class="token operator">+</span> data_url <span class="token operator">+</span> <span class="token string">"' class='search-result-title'>"</span> <span class="token operator">+</span> data_title <span class="token operator">+</span> <span class="token string">"&lt;/a>"</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">-</span>str <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"&lt;li&gt;&lt;a href='"</span> <span class="token operator">+</span> data_url <span class="token operator">+</span> <span class="token string">"' class='search-result-title'&gt;"</span> <span class="token operator">+</span> data_title <span class="token operator">+</span> <span class="token string">"&lt;/a&gt;"</span><span class="token punctuation">;</span> 
+<span class="token operator">+</span>str <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"&lt;li&gt;&lt;a href='/"</span> <span class="token operator">+</span> data_url <span class="token operator">+</span> <span class="token string">"' class='search-result-title'&gt;"</span> <span class="token operator">+</span> data_title <span class="token operator">+</span> <span class="token string">"&lt;/a&gt;"</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="4-6-中文链接转拼音（建议安装）"><a href="#4-6-中文链接转拼音（建议安装）" class="headerlink" title="4.6 中文链接转拼音（建议安装）"></a>4.6 中文链接转拼音（建议安装）</h2><p>如果你的文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。我们可以用 <a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin">hexo-permalink-pinyin</a> Hexo 插件使在生成文章时生成中文拼音的永久链接。<br>安装命令如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> i hexo-permalink-pinyin --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
@@ -741,11 +746,11 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <h2 id="4-11-添加-Tidio-在线聊天功能（可选的）"><a href="#4-11-添加-Tidio-在线聊天功能（可选的）" class="headerlink" title="4.11 添加 Tidio 在线聊天功能（可选的）"></a>4.11 添加 <a target="_blank" rel="noopener" href="https://www.tidio.com/">Tidio</a> 在线聊天功能（可选的）</h2><p>前往 <a target="_blank" rel="noopener" href="https://www.tidio.com/">Tidio</a> 官网注册并且获取 <code>Public Key</code>，并将 <code>Public Key</code> 填入主题的 <code>_config.yml</code> 文件中。</p>
 <h2 id="4-12-修改页脚"><a href="#4-12-修改页脚" class="headerlink" title="4.12 修改页脚"></a>4.12 修改页脚</h2><p>页脚信息可能需要做定制化修改，而且它不便于做成配置信息，所以可能需要你自己去再修改和加工。修改的地方在主题文件的 <code>/layout/_partial/footer.ejs</code> 文件中，包括站点、使用的主题、访问量等。</p>
 <h2 id="4-13-修改社交链接"><a href="#4-13-修改社交链接" class="headerlink" title="4.13 修改社交链接"></a>4.13 修改社交链接</h2><p>在主题的 <code>_config.yml</code> 文件中，默认支持 <code>QQ</code>、<code>GitHub</code> 和邮箱等的配置，你可以在主题文件的 <code>/layout/_partial/social-link.ejs</code> 文件中，新增、修改你需要的社交链接地址，增加链接可参考如下代码：</p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">if</span> <span class="token attr-name">(theme.socialLink.github)</span> <span class="token attr-name">{</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%<span class="token punctuation">=</span> theme.socialLink.github %<span class="token punctuation">></span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tooltipped<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">data-tooltip</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>访问我的GitHub<span class="token punctuation">"</span></span> <span class="token attr-name">data-position</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span> <span class="token attr-name">data-delay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fab fa-github<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">}</span> <span class="token attr-name">%</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">if</span> <span class="token attr-name">(theme.socialLink.github)</span> <span class="token attr-name">&amp;#123;</span> <span class="token attr-name">%</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%<span class="token punctuation">=</span> theme.socialLink.github %<span class="token punctuation">&gt;</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tooltipped<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">data-tooltip</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>访问我的GitHub<span class="token punctuation">"</span></span> <span class="token attr-name">data-position</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span> <span class="token attr-name">data-delay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fab fa-github<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>%</span> <span class="token attr-name">&amp;#125;</span> <span class="token attr-name">%</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中，社交图标（如：<code>fa-github</code>）你可以在 <a target="_blank" rel="noopener" href="https://fontawesome.com/icons">Font Awesome</a> 中搜索找到。以下是常用社交图标的标识，供你参考：</p>
 <ul>
 <li>Facebook: <code>fab fa-facebook</code></li>
@@ -905,15 +910,15 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
   <span class="token punctuation">-</span> Typora
   <span class="token punctuation">-</span> Markdown
 <span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="5-博客部署到gitee"><a href="#5-博客部署到gitee" class="headerlink" title="5 博客部署到gitee"></a>5 博客部署到gitee</h1><p>(1) 首先安装发布插件，在Git的命令行中执行以下命令</p>
+<h1 id="5-博客部署到gitee"><a href="#5-博客部署到gitee" class="headerlink" title="5 博客部署到gitee"></a>5 博客部署到gitee</h1><p>(1).首先安装发布插件，在Git的命令行中执行以下命令</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(2) 然后去码云官网注册一个自己的账号，并新建一个仓库存储博客生成的页面，这里推荐<strong>仓库名字与码云名字一致</strong>，否则后续会有麻烦，如图所示</p>
+<p>(2).然后去码云官网注册一个自己的账号，并新建一个仓库存储博客生成的页面，这里推荐<strong>仓库名字与码云名字一致</strong>，否则后续会有麻烦，如图所示</p>
 <img src="/posts/295e0edf/码云仓库.png" alt="码云仓库" style="zoom:60%;">
 
 <blockquote>
 <p><strong>需要注意的是：新建仓库必须选择公开</strong></p>
 </blockquote>
-<p>(3) 添加公钥</p>
+<p>(3).添加公钥</p>
 <blockquote>
 <p>点击管理 —&gt; 部署公钥管理 —&gt; 新增部署公钥，添加公钥的内容也是之前部署到 GitHub 上添加的公钥</p>
 </blockquote>
@@ -1759,7 +1764,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">10.1k</span>&nbsp;字
             
             
             

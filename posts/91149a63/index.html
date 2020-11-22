@@ -30,10 +30,10 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -470,14 +470,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-19
+                    2020-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    672
+                    685
                 </div>
                 
 
@@ -504,21 +504,67 @@
 
 <h2 id="1-2-网络设备"><a href="#1-2-网络设备" class="headerlink" title="1.2 网络设备"></a>1.2 网络设备</h2><img src="/posts/91149a63/网络设备图标.png" alt="网络设备图标" style="zoom:60%;">
 
-<h3 id="1-2-1-Hub-集线器"><a href="#1-2-1-Hub-集线器" class="headerlink" title="1.2.1 Hub(集线器)"></a>1.2.1 Hub(集线器)</h3><p>​            优点：便宜<br>​            缺点：共享型，无法满足多人同时访问</p>
-<h3 id="1-2-2-交换机"><a href="#1-2-2-交换机" class="headerlink" title="1.2.2 交换机"></a>1.2.2 交换机</h3><p>​            所有的接口在同一个广播域<br>​            优点：可实现多用户同时访问，支持全双工<br>​            缺点：共享型，无法满足多人同时访问<br>​            作用：终端用户设备的接入\基本的安全功能\广播域的隔离（VLAN） </p>
-<h3 id="1-2-3-路由器"><a href="#1-2-3-路由器" class="headerlink" title="1.2.3 路由器"></a>1.2.3 路由器</h3><p>​            每一个接口是一个独立的广播域<br>​            优点：可搭建大型网络、安全性高<br>​            缺点：接口太少、价格太贵<br>​            作用：路由协议支持\路径选择\数据转发\广域网接入</p>
-<h3 id="1-2-4-TIPS"><a href="#1-2-4-TIPS" class="headerlink" title="1.2.4 TIPS"></a>1.2.4 TIPS</h3><h4 id="传输类型："><a href="#传输类型：" class="headerlink" title="传输类型："></a>传输类型：</h4><p>​            单工(始终只能完成一个方向的数据传输)<br>​            半双工(同一时间只能完成一个方向的数据传输)<br>​            全双工(同一时间可以完成两个方向的数据传输)</p>
-<h4 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h4><p>​            广播报文(单IP到所有IP)<br>​            单播报文(单IP到单IP)<br>​            组播报文(单IP到多IP，类似朋友圈的部分可见）</p>
+<h3 id="1-2-1-Hub-集线器"><a href="#1-2-1-Hub-集线器" class="headerlink" title="1.2.1 Hub(集线器)"></a>1.2.1 Hub(集线器)</h3><ul>
+<li>优点：便宜</li>
+<li>缺点：共享型，无法满足多人同时访问</li>
+</ul>
+<h3 id="1-2-2-交换机"><a href="#1-2-2-交换机" class="headerlink" title="1.2.2 交换机"></a>1.2.2 交换机</h3><p><strong>所有的接口在同一个广播域</strong></p>
+<ul>
+<li>优点：可实现多用户同时访问，支持全双工</li>
+<li>缺点：共享型，无法满足多人同时访问</li>
+<li>作用：终端用户设备的接入\基本的安全功能\广播域的隔离（VLAN） </li>
+</ul>
+<h3 id="1-2-3-路由器"><a href="#1-2-3-路由器" class="headerlink" title="1.2.3 路由器"></a>1.2.3 路由器</h3><ul>
+<li>每一个接口是一个独立的广播域</li>
+<li>优点：可搭建大型网络、安全性高</li>
+<li>缺点：接口太少、价格太贵</li>
+<li>作用：路由协议支持\路径选择\数据转发\广域网接入</li>
+</ul>
+<h3 id="1-2-4-TIPS"><a href="#1-2-4-TIPS" class="headerlink" title="1.2.4 TIPS"></a>1.2.4 TIPS</h3><h4 id="1-2-4-1传输类型："><a href="#1-2-4-1传输类型：" class="headerlink" title="1.2.4.1传输类型："></a>1.2.4.1传输类型：</h4><ul>
+<li>单工(始终只能完成一个方向的数据传输)</li>
+<li>半双工(同一时间只能完成一个方向的数据传输)</li>
+<li>全双工(同一时间可以完成两个方向的数据传输)</li>
+</ul>
+<h4 id="1-2-4-2数据类型："><a href="#1-2-4-2数据类型：" class="headerlink" title="1.2.4.2数据类型："></a>1.2.4.2数据类型：</h4><ul>
+<li>广播报文(单IP到所有IP)</li>
+<li>单播报文(单IP到单IP)</li>
+<li>组播报文(单IP到多IP，类似朋友圈的部分可见）</li>
+</ul>
 <h1 id="2-OSI七层模型"><a href="#2-OSI七层模型" class="headerlink" title="2 OSI七层模型"></a>2 OSI七层模型</h1><p>从下至上分别是物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
 <img src="/posts/91149a63/OSI.png" alt="OSI" style="zoom:60%;">
 
-<h2 id="2-1-应用层"><a href="#2-1-应用层" class="headerlink" title="2.1 应用层"></a>2.1 应用层</h2><p>为应用软件提供接口，使应用程序能够使用网络服务<br>    http(80)<br>    https(443)<br>    dns(53)<br>    ftp(20/21)<br>    smtp(25)<br>    pop3(110)<br>    telnet(23)<br>上述数字代表其端口号</p>
-<h2 id="2-2-表示层"><a href="#2-2-表示层" class="headerlink" title="2.2 表示层"></a>2.2 表示层</h2><p>数据的解码和编码 加密和解密 压缩和解压缩</p>
+<h2 id="2-1-应用层"><a href="#2-1-应用层" class="headerlink" title="2.1 应用层"></a>2.1 应用层</h2><p>为应用软件提供接口，使应用程序能够使用网络服务</p>
+<ul>
+<li>http(80)</li>
+<li>https(443)</li>
+<li>dns(53)</li>
+<li>ftp(20/21)</li>
+<li>smtp(25)</li>
+<li>pop3(110)</li>
+<li>telnet(23)<br>上述数字代表其端口号</li>
+</ul>
+<h2 id="2-2-表示层"><a href="#2-2-表示层" class="headerlink" title="2.2 表示层"></a>2.2 表示层</h2><ul>
+<li>数据的解码和编码 </li>
+<li>数据的加密和解密 </li>
+<li>数据的压缩和解压缩</li>
+</ul>
 <h2 id="2-3-会话层"><a href="#2-3-会话层" class="headerlink" title="2.3 会话层"></a>2.3 会话层</h2><p>负责建立、管理和终止表示层实体之间的会话连接</p>
 <h2 id="2-4-传输层-主要为TCP-UDP"><a href="#2-4-传输层-主要为TCP-UDP" class="headerlink" title="2.4 传输层(主要为TCP/UDP)"></a>2.4 传输层(主要为TCP/UDP)</h2><p>负责建立端到端的连接，保证报文在端到端之间的传输</p>
-<h2 id="2-5-网络层"><a href="#2-5-网络层" class="headerlink" title="2.5 网络层"></a>2.5 网络层</h2><p>为网络设备提供逻辑地址<br>    进行路由选择、维护路由表<br>    负责将分组数据从源端传输到目的端<br>    代表：路由器</p>
-<h2 id="2-6-数据链路层-MAC"><a href="#2-6-数据链路层-MAC" class="headerlink" title="2.6 数据链路层(MAC)"></a>2.6 数据链路层(MAC)</h2><p>在不可靠的物理链路上，提供可靠的数据传输服务，把帧从一跳(结点)移动到另一帧（结点）<br>    组帧、物理编址、流量控制、差错控制、接入控制<br>    代表：交换机</p>
-<h2 id="2-7-物理层"><a href="#2-7-物理层" class="headerlink" title="2.7 物理层"></a>2.7 物理层</h2><p>负责把逐个的比特从一跳(结点)移动到另一跳(结点)<br>    代表：集线器</p>
+<h2 id="2-5-网络层"><a href="#2-5-网络层" class="headerlink" title="2.5 网络层"></a>2.5 网络层</h2><p>为网络设备提供逻辑地址</p>
+<ul>
+<li>进行路由选择、维护路由表</li>
+<li>负责将分组数据从源端传输到目的端</li>
+<li>代表：路由器</li>
+</ul>
+<h2 id="2-6-数据链路层-MAC"><a href="#2-6-数据链路层-MAC" class="headerlink" title="2.6 数据链路层(MAC)"></a>2.6 数据链路层(MAC)</h2><p>在不可靠的物理链路上，提供可靠的数据传输服务，把帧从一跳(结点)移动到另一帧（结点）</p>
+<ul>
+<li>组帧、物理编址、流量控制、差错控制、接入控制</li>
+<li>代表：交换机</li>
+</ul>
+<h2 id="2-7-物理层"><a href="#2-7-物理层" class="headerlink" title="2.7 物理层"></a>2.7 物理层</h2><p>负责把逐个的比特从一跳(结点)移动到另一跳(结点)</p>
+<ul>
+<li>代表：集线器</li>
+</ul>
 <h1 id="3-数据的封装与解封装"><a href="#3-数据的封装与解封装" class="headerlink" title="3 数据的封装与解封装"></a>3 数据的封装与解封装</h1><img src="/posts/91149a63/数据封装.PNG" alt="数据封装" style="zoom:60%;">
 
 <img src="/posts/91149a63/数据解封装.PNG" alt="数据解封装" style="zoom:60%;">
@@ -1329,7 +1375,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">10.1k</span>&nbsp;字
             
             
             

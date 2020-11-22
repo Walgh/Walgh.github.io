@@ -30,10 +30,10 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -470,14 +470,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-20
+                    2020-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    240
+                    241
                 </div>
                 
 
@@ -504,21 +504,20 @@
 <h2 id="1-2-路由器的组成及功能"><a href="#1-2-路由器的组成及功能" class="headerlink" title="1.2 路由器的组成及功能"></a>1.2 路由器的组成及功能</h2><img src="/posts/8ea9b4cd/路由器组成及功能.PNG" alt="路由器组成及功能" style="zoom:60%;">
 
 <h2 id="1-3-Cisco路由器的启动步骤"><a href="#1-3-Cisco路由器的启动步骤" class="headerlink" title="1.3 Cisco路由器的启动步骤"></a>1.3 Cisco路由器的启动步骤</h2><h2 id="1-4-Cisco设备管理"><a href="#1-4-Cisco设备管理" class="headerlink" title="1.4 Cisco设备管理"></a>1.4 Cisco设备管理</h2><p>通过多种方法访问CLI环境，常用的方法有：</p>
-<blockquote>
-<p>—控制台</p>
-</blockquote>
-<blockquote>
-<p>—Telnet或SSH</p>
-</blockquote>
-<blockquote>
-<p>—辅助端口</p>
-</blockquote>
-<h2 id="1-5-机柜"><a href="#1-5-机柜" class="headerlink" title="1.5 机柜"></a>1.5 机柜</h2><blockquote>
-<p>网络机柜标准为42U</p>
-</blockquote>
-<blockquote>
-<p>1U= 4.445cm</p>
-</blockquote>
+<ul>
+<li><p>控制台</p>
+</li>
+<li><p>Telnet或SSH</p>
+</li>
+<li><p>辅助端口</p>
+</li>
+</ul>
+<h2 id="1-5-机柜"><a href="#1-5-机柜" class="headerlink" title="1.5 机柜"></a>1.5 机柜</h2><ul>
+<li><p>网络机柜标准为42U</p>
+</li>
+<li><p>1U= 4.445cm</p>
+</li>
+</ul>
 <h2 id="1-6-Cisco-IOS软件映像文件命名规则"><a href="#1-6-Cisco-IOS软件映像文件命名规则" class="headerlink" title="1.6 Cisco IOS软件映像文件命名规则"></a>1.6 Cisco IOS软件映像文件命名规则</h2><p><font color="black">c3660</font>-<font color="red">jk9o3s</font>-<font color="blue">mz</font>. <font color="#00ffff">124-15.T5</font></p>
 <blockquote>
 <p><font color="black">(1) 硬件平台</font></p>
@@ -534,17 +533,21 @@
 </blockquote>
 <h2 id="1-7-产品包"><a href="#1-7-产品包" class="headerlink" title="1.7 产品包"></a>1.7 产品包</h2><img src="/posts/8ea9b4cd/产品包.PNG" alt="产品包" style="zoom:60%;">
 
-<h1 id="2-Cisco-IOS配置管理"><a href="#2-Cisco-IOS配置管理" class="headerlink" title="2 Cisco IOS配置管理"></a>2 Cisco IOS配置管理</h1><h2 id="2-1-show命令"><a href="#2-1-show命令" class="headerlink" title="2.1 show命令"></a>2.1 show命令</h2><blockquote>
-<p>最基本的检查命令<br>可使用show命令来获得可在当前上下文或模式下使用的命令的列表</p>
-</blockquote>
+<h1 id="2-Cisco-IOS配置管理"><a href="#2-Cisco-IOS配置管理" class="headerlink" title="2 Cisco IOS配置管理"></a>2 Cisco IOS配置管理</h1><h2 id="2-1-show命令"><a href="#2-1-show命令" class="headerlink" title="2.1 show命令"></a>2.1 show命令</h2><ul>
+<li>最基本的检查命令</li>
+<li>可使用show命令来获得可在当前上下文或模式下使用的命令的列表</li>
+</ul>
 <img src="/posts/8ea9b4cd/show命令.PNG" alt="show命令" style="zoom:60%;">
 
-<h2 id="2-2-配置主机名"><a href="#2-2-配置主机名" class="headerlink" title="2.2 配置主机名"></a>2.2 配置主机名</h2><blockquote>
-<p>采用hostname “名字”</p>
-</blockquote>
-<h2 id="2-3-限制设备访问—配置口令和使用标语"><a href="#2-3-限制设备访问—配置口令和使用标语" class="headerlink" title="2.3 限制设备访问—配置口令和使用标语"></a>2.3 限制设备访问—配置口令和使用标语</h2><blockquote>
-<p>使能口令——enable “password”<br>使能加密口令——enable secret “password”<br>控制台口令——line console “编号”，再设置password<br>VTY口令——line vty “编号”，再设置password</p>
-</blockquote>
+<h2 id="2-2-配置主机名"><a href="#2-2-配置主机名" class="headerlink" title="2.2 配置主机名"></a>2.2 配置主机名</h2><ul>
+<li>采用hostname “名字”</li>
+</ul>
+<h2 id="2-3-限制设备访问—配置口令和使用标语"><a href="#2-3-限制设备访问—配置口令和使用标语" class="headerlink" title="2.3 限制设备访问—配置口令和使用标语"></a>2.3 限制设备访问—配置口令和使用标语</h2><ul>
+<li>使能口令——enable “password”</li>
+<li>使能加密口令——enable secret “password”</li>
+<li>控制台口令——line console “编号”，再设置password</li>
+<li>VTY口令——line vty “编号”，再设置password</li>
+</ul>
 <h2 id="2-4-配置接口"><a href="#2-4-配置接口" class="headerlink" title="2.4 配置接口"></a>2.4 配置接口</h2><img src="/posts/8ea9b4cd/配置接口.PNG" alt="配置接口" style="zoom:60%;">
             </div>
             <hr/>
@@ -1343,7 +1346,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">10.1k</span>&nbsp;字
             
             
             
