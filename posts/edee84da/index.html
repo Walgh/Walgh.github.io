@@ -30,10 +30,10 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-shades-of-purple.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -536,8 +536,8 @@
 <li>安全性</li>
 </ul>
 <img src="/posts/edee84da/某部门网络解决方案.png" alt="某部门网络解决方案" style="zoom:60%;">
-如图所示，某公司要求1、2、3层各部门网络设别分别属于不同广播域，图示解决方案是一层楼架设一个交换机，这样每一层属于一个网段，但此时成本较高，若某一层只有一到两台终端，不太经济，因此诞生了**VLAN技术**。VLAN技术从**软件层面**，将**交换机的接口**划分为不同的广播域。
 
+<p>如图所示，某公司要求1、2、3层各部门网络设别分别属于不同广播域，图示解决方案是一层楼架设一个交换机，这样每一层属于一个网段，但此时成本较高，若某一层只有一到两台终端，不太经济，因此诞生 <strong>VLAN技术</strong>。VLAN技术从<strong>软件层面</strong>，将<strong>交换机的接口</strong>划分为不同的广播域。</p>
 <p><strong>VLAN的特点：</strong></p>
 <ul>
 <li>一个VALN就是一个广播域，也就是一个逻辑子网(网段)</li>
@@ -558,7 +558,11 @@ Switch<span class="token punctuation">(</span>config-vlan<span class="token punc
 Switch<span class="token punctuation">(</span>config-if<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># switchport mode access      // 设置接口模式</span>
 Switch<span class="token punctuation">(</span>config-if<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># switchport access [vlan vlan#|dynamic]   // 为接口指定VLAN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p><strong>Tip:</strong> 1、access接口是二层接口，SVI接口是三层接口<br>       2、批量进入多个接口使用命令<code>interface range ethernet 0/0 -2(你想要的范围)</code>实现连续端口，或者使用命令<code>interface range ethernet 0/0,0/4</code>实现非连续端口</p>
+<p><strong>Tips:</strong> </p>
+<ol>
+<li>access接口是二层接口，SVI接口是三层接口</li>
+<li>批量进入多个接口使用命令<code>interface range ethernet 0/0 -2(你想要的范围)</code>实现连续端口，或者使用命令<code>interface range ethernet 0/0,0/4</code>实现非连续端口</li>
+</ol>
 </blockquote>
 <h2 id="2-3-SVI-三层接口-的两种类型"><a href="#2-3-SVI-三层接口-的两种类型" class="headerlink" title="2.3 SVI(三层接口)的两种类型"></a>2.3 SVI(三层接口)的两种类型</h2><ul>
 <li>主机管理接口，管理员可以利用该接口管理交换机</li>
@@ -569,54 +573,57 @@ Switch<span class="token punctuation">(</span>config-if<span class="token punctu
 <p>三层交换机具备路由功能，可以配置IP</p>
 </blockquote>
 <h1 id="3-Trunk技术"><a href="#3-Trunk技术" class="headerlink" title="3 Trunk技术"></a>3 Trunk技术</h1><h2 id="3-1-Trunk的概念"><a href="#3-1-Trunk的概念" class="headerlink" title="3.1 Trunk的概念"></a>3.1 Trunk的概念</h2><img src="/posts/edee84da/Trunk.png" alt="Trunk" style="zoom:60%;">
-**给不同的VLAN做上不同的标记，类似于通信中的复用**
 
+<p><strong>给不同的VLAN做上不同的标记，类似于通信中的复用</strong></p>
 <h2 id="3-2-802-1Q"><a href="#3-2-802-1Q" class="headerlink" title="3.2 802.1Q"></a>3.2 802.1Q</h2><img src="/posts/edee84da/802.1Q帧结构.png" alt="802.1Q帧结构" style="zoom:60%;">
 
 <blockquote>
-<p>**Tip: **其中Native VLAN为本征VLAN，默认为vlan1</p>
+<p><strong>Tip:</strong> 其中Native VLAN为本征VLAN，默认为vlan1</p>
 </blockquote>
 <h2 id="3-3-Trunk的基本配置"><a href="#3-3-Trunk的基本配置" class="headerlink" title="3.3 Trunk的基本配置"></a>3.3 Trunk的基本配置</h2><ul>
-<li><p><strong>配置Trunk封装模式</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">interface f0/15
-switchport trunk encapsulation <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;isl|dot1q&amp;#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<li><strong>配置Trunk封装模式</strong><pre class="line-numbers language-bash"><code class="language-bash">interface f0/15
+switchport trunk encapsulation <span class="token punctuation">{</span>isl<span class="token operator">|</span>dot1q<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
 <blockquote>
-<p>**Tip: **isl模式不用，只用dot1q</p>
+<p><strong>Tip:</strong> isl模式不用，只用dot1q</p>
 </blockquote>
-</li>
-<li><p><strong>开启端口trunk模式</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">switchport mode<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;dynamic&amp;#123;auto|desirable&amp;#125;|trunk&amp;#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>常用命令</strong></p>
+<ul>
+<li><strong>开启端口trunk模式</strong></li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">switchport mode<span class="token punctuation">{</span>dynamic<span class="token punctuation">{</span>auto<span class="token operator">|</span>desirable<span class="token punctuation">}</span><span class="token operator">|</span>trunk<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
 <pre class="line-numbers language-bash"><code class="language-bash">switchport trunk allowed vlan 10        // 只允许vlan10使用trunk
 switchport trunk allowed vlan add 20    // 添加允许vlan20使用trunk
 switchport trunk allowed vlan remove 10 // 删除vlan10使用trunk
 switchport trunk allowed vlan all       // 放行所有vlan
 switchport trunk native vlan 10            // 修改本征vlan<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="4-VTP-VLAN-Trunking-Protocol"><a href="#4-VTP-VLAN-Trunking-Protocol" class="headerlink" title="4 VTP(VLAN Trunking Protocol)"></a>4 VTP(VLAN Trunking Protocol)</h1></li>
-<li><p>一个能够宣告VLAN配置信息的信息系统；</p>
-</li>
-<li><p>通过一个共有的管理域，维持VLAN配置信息的一致性</p>
-</li>
-<li><p>VTP只能在主干端口发送要宣告的信息</p>
-</li>
-<li><p>支持混合的介质主干连接(快速以太网，FDDI，ATM)</p>
-</li>
+<h1 id="4-VTP-VLAN-Trunking-Protocol"><a href="#4-VTP-VLAN-Trunking-Protocol" class="headerlink" title="4 VTP(VLAN Trunking Protocol)"></a>4 VTP(VLAN Trunking Protocol)</h1><ul>
+<li>一个能够宣告VLAN配置信息的信息系统；</li>
+<li>通过一个共有的管理域，维持VLAN配置信息的一致性</li>
+<li>VTP只能在主干端口发送要宣告的信息</li>
+<li>支持混合的介质主干连接(快速以太网，FDDI，ATM)</li>
 </ul>
 <h2 id="4-1-VTP模式"><a href="#4-1-VTP模式" class="headerlink" title="4.1 VTP模式"></a>4.1 VTP模式</h2><img src="/posts/edee84da/VTP模式.png" alt="VTP模式" style="zoom:60%;">
-## 4.2 VTP的配置
-```bash
-Switch# configure terminal
-Switch(config)# vtp mode[server|client|transparent]
-Switch(config)# vtp domain domain-name
-Switch(config)# vtp password password
-Switch(config)# vtp pruning   // vtp修剪
-Switch(config)# vtp version 2 // 版本由1-3,常用2
-```
-&gt;**Tips:** 1、默认情况：VTP模式为server
-&gt;          2、VTP域名对大小写敏感
-&gt;          3、VTP密码对大小写敏感
-&gt;          4、VTP修剪默认关闭
+
+<h2 id="4-2-VTP的配置"><a href="#4-2-VTP的配置" class="headerlink" title="4.2 VTP的配置"></a>4.2 VTP的配置</h2><pre class="line-numbers language-bash"><code class="language-bash">Switch<span class="token comment" spellcheck="true"># configure terminal</span>
+Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># vtp mode[server|client|transparent]</span>
+Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># vtp domain domain-name</span>
+Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># vtp password password</span>
+Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># vtp pruning   // vtp修剪</span>
+Switch<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># vtp version 2 // 版本由1-3,常用2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>Tips:</strong> </p>
+<ol>
+<li>默认情况下VTP模式为server</li>
+<li>VTP域名对大小写敏感</li>
+<li>VTP密码对大小写敏感</li>
+<li>VTP修剪默认关闭</li>
+</ol>
+</blockquote>
+
             </div>
             <hr/>
 
@@ -1440,7 +1447,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.1k</span>&nbsp;字
+                class="white-color">10k</span>&nbsp;字
             
             
             
